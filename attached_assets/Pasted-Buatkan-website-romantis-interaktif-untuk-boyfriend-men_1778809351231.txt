@@ -1,0 +1,132 @@
+Buatkan website romantis interaktif untuk boyfriend menggunakan HTML, CSS, dan JavaScript vanilla. Website harus mudah diedit di VSCode/Replit, tanpa backend, tanpa database, dan semua data disimpan di file JavaScript.
+
+Konsep utama:
+Website romantis lucu, soft, aesthetic, warna soft pink, cream, putih, dan sedikit gold. Vibes-nya sweet, playful, emotional, tapi tidak terlalu ramai.
+
+Struktur halaman:
+1. Landing page
+2. Password page
+3. Main menu berisi pilihan fitur
+4. Halaman ucapan ulang tahun
+5. Halaman permintaan maaf
+6. Halaman rasa sayang
+7. Halaman harapan masa depan
+8. Open When page
+9. Memory timeline
+10. Polaroid gallery
+11. Random love message
+12. Achievement page
+13. Ending page
+
+Fitur detail:
+
+1. Landing Page
+- Judul: “Hai sayang, aku bikin sesuatu buat kamu 💌”
+- Subtitle: “Buka pelan-pelan ya, jangan langsung sok cool.”
+- Tombol: “Mulai Buka”
+- Ada animasi hati kecil floating di background.
+
+2. Password Page
+- Pertanyaan: “Masukkan nama panggilan aku buat kamu”
+- Input password.
+- Jika benar, masuk ke main menu.
+- Jika salah, tampilkan pesan lucu: “Hmm masa lupa sih? coba lagi 😭”
+- Password bisa diubah mudah di file script.js.
+
+3. Main Menu
+Buat card interaktif dengan hover animation:
+- 🎂 Ucapan Ulang Tahun
+- 🥺 Permintaan Maaf
+- 💗 Rasa Sayang
+- 🌙 Harapan Masa Depan
+- 📬 Open When
+- 📸 Galeri Kenangan
+- 🏆 Achievement
+- ✨ Ending
+
+4. Surat Digital
+Untuk halaman ulang tahun, maaf, sayang, dan masa depan:
+- Gunakan layout seperti kertas surat.
+- Ada tombol “Buka Pelan-Pelan”.
+- Setiap klik menampilkan paragraf berikutnya satu per satu.
+- Tambahkan tombol kembali ke menu.
+
+5. Open When Page
+Buat beberapa card:
+- Open when kamu sedih
+- Open when kamu capek
+- Open when kamu overthinking
+- Open when kamu kangen aku
+Ketika card diklik, munculkan modal/popup berisi pesan hangat.
+
+6. Memory Timeline
+Buat timeline vertikal berisi momen:
+- Hari pertama kenal
+- First call
+- Momen lucu
+- First fight
+- Momen paling aku inget
+Semua teks mudah diedit di script.js.
+
+7. Polaroid Gallery
+Buat galeri foto model polaroid.
+- Gunakan placeholder image jika belum ada foto.
+- Setiap foto punya caption lucu.
+- Caption mudah diedit.
+- Layout responsif untuk HP dan laptop.
+
+8. Random Love Message Generator
+- Tombol: “Klik kalau butuh disayang”
+- Saat diklik, tampilkan kalimat random dari array.
+Contoh:
+“Aku bangga sama kamu.”
+“Jangan lupa istirahat ya.”
+“Kamu rumah paling nyaman buat aku.”
+
+9. Achievement Page
+Buat badge lucu:
+- “Successfully survived my mood swings”
+- “Professional overthink listener”
+- “Certified good boy”
+- “Main character in my heart”
+Tampilkan seperti kartu achievement game.
+
+10. Cursor Effect
+Tambahkan efek sparkle/heart kecil saat mouse bergerak atau saat klik.
+
+11. Music Player
+Tambahkan player audio kecil di pojok bawah.
+- Bisa play/pause.
+- Jangan autoplay paksa.
+- Gunakan file audio lokal seperti music.mp3.
+- Jika file belum ada, tetap tampilkan tombolnya tanpa error.
+
+12. Countdown
+Tampilkan teks:
+“Sudah bersama selama X hari”
+Tanggal awal hubungan bisa diubah di script.js.
+
+13. Ending Page
+Buat ending scene dengan background malam/bintang.
+Teks:
+“Terima kasih sudah jadi bagian paling hangat di hidup aku.”
+“Kalau nanti dunia lagi berat, pulang aja ke aku.”
+Tambahkan tombol: “Balas aku di WhatsApp 💌”
+Tombol WhatsApp memakai link yang mudah diganti.
+
+Ketentuan teknis:
+- Gunakan HTML, CSS, JavaScript vanilla.
+- Buat file:
+  - index.html
+  - style.css
+  - script.js
+- Jangan gunakan framework.
+- Jangan gunakan backend.
+- Jangan gunakan database.
+- Semua teks, password, tanggal, foto, caption, dan pesan random harus mudah diedit di bagian atas script.js.
+- Website harus responsive di HP.
+- Gunakan animasi CSS yang ringan.
+- Desain harus clean, modern, soft, cute, dan tidak norak.
+- Berikan komentar di kode agar mudah diedit pemula.
+- Pastikan semua tombol berfungsi.
+- Pastikan tidak ada error console.
