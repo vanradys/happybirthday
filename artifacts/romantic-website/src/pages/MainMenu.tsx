@@ -1,6 +1,4 @@
 import { useLocation } from "wouter";
-import { config } from "@/config";
-import { differenceInDays } from "date-fns";
 
 const menuItems = [
   { emoji: "🎂", title: "Ucapan Ulang Tahun", path: "/birthday", from: "from-rose-100", to: "to-pink-200" },
@@ -15,9 +13,37 @@ const menuItems = [
   { emoji: "✨", title: "Ending", path: "/ending", from: "from-violet-100", to: "to-purple-100" },
 ];
 
+function getRelationshipDuration(startDate: Date) {
+  const today = new Date();
+
+  let years = today.getFullYear() - startDate.getFullYear();
+  let months = today.getMonth() - startDate.getMonth();
+  let days = today.getDate() - startDate.getDate();
+
+  if (days < 0) {
+    months--;
+
+    const previousMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+    days += previousMonth.getDate();
+  }
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  if (years < 0) {
+    return "0 tahun 0 bulan 0 hari";
+  }
+
+  return `${years} tahun ${months} bulan ${days} hari`;
+}
+
 export default function MainMenu() {
   const [, setLocation] = useLocation();
-  const daysTogether = differenceInDays(new Date(), config.relationshipStart);
+
+  const relationshipStart = new Date("2023-10-26");
+  const togetherText = getRelationshipDuration(relationshipStart);
 
   return (
     <div className="min-h-screen bg-background py-10 px-4">
@@ -27,8 +53,8 @@ export default function MainMenu() {
           <h1 className="text-2xl font-serif font-bold text-foreground">Untuk Kamu, Sayang</h1>
           <div className="inline-block mt-3 px-5 py-2 bg-primary/10 rounded-full">
             <p className="text-sm text-foreground">
-              Sudah bersama selama{" "}
-              <span className="font-bold text-primary">{daysTogether} hari</span>{" "}
+              Kita udah bersama selama{" "}
+              <span className="font-bold text-primary">{togetherText}</span>{" "}
               <span className="text-rose-400">✨</span>
             </p>
           </div>
