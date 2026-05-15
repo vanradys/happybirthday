@@ -57,13 +57,13 @@ export default function Ending() {
           className="text-xl sm:text-2xl font-serif text-white leading-relaxed mb-5"
           style={{ textShadow: "0 0 30px rgba(255,200,200,0.4)" }}
         >
-          "Terima kasih sudah jadi bagian paling hangat di hidup aku."
+          "Aku suka dunia yang kita bikin berdua."
         </p>
         <p
           className="text-lg sm:text-xl font-serif text-rose-200 leading-relaxed mb-12"
           style={{ textShadow: "0 0 20px rgba(255,100,150,0.3)" }}
         >
-          "Kalau nanti dunia lagi berat, pulang aja ke aku."
+          "Kalau dunia lagi berat, pulang aja ke aku yaa bubu."
         </p>
 
         <a

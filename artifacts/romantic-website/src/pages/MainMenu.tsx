@@ -1,16 +1,16 @@
 import { useLocation } from "wouter";
 
 const menuItems = [
-  { emoji: "🎂", title: "Ucapan Ulang Tahun", path: "/birthday", from: "from-rose-100", to: "to-pink-200" },
-  { emoji: "🥺", title: "Permintaan Maaf", path: "/apology", from: "from-purple-100", to: "to-pink-100" },
-  { emoji: "💗", title: "Rasa Sayang", path: "/love", from: "from-pink-100", to: "to-red-100" },
-  { emoji: "🌙", title: "Harapan Masa Depan", path: "/future", from: "from-indigo-100", to: "to-purple-100" },
-  { emoji: "📬", title: "Open When", path: "/open-when", from: "from-amber-100", to: "to-yellow-100" },
-  { emoji: "📸", title: "Galeri Kenangan", path: "/gallery", from: "from-teal-100", to: "to-green-100" },
-  { emoji: "💌", title: "Pesan Sayang", path: "/messages", from: "from-rose-100", to: "to-orange-100" },
-  { emoji: "📅", title: "Memory Timeline", path: "/timeline", from: "from-sky-100", to: "to-blue-100" },
-  { emoji: "🏆", title: "Achievement", path: "/achievements", from: "from-amber-100", to: "to-orange-100" },
-  { emoji: "✨", title: "Ending", path: "/ending", from: "from-violet-100", to: "to-purple-100" },
+  { emoji: "🎂", title: "Ulang Tahun Bubu", path: "/birthday", from: "from-rose-100", to: "to-pink-200" },
+  { emoji: "🥺", title: "Minta Maaf...", path: "/apology", from: "from-purple-100", to: "to-pink-100" },
+  { emoji: "💗", title: "Rasa Sayangnya Akuu", path: "/love", from: "from-pink-100", to: "to-red-100" },
+  { emoji: "🌙", title: "Harapan Masa Depan sama Bubu", path: "/future", from: "from-indigo-100", to: "to-purple-100" },
+  { emoji: "📬", title: "Open When...", path: "/open-when", from: "from-amber-100", to: "to-yellow-100" },
+  { emoji: "📸", title: "Galeri Kitaa", path: "/gallery", from: "from-teal-100", to: "to-green-100" },
+  { emoji: "💌", title: "Pesan untuk Bubu", path: "/messages", from: "from-rose-100", to: "to-orange-100" },
+  { emoji: "📅", title: "Timeline Kitaa", path: "/timeline", from: "from-sky-100", to: "to-blue-100" },
+  { emoji: "🏆", title: "Achievement Bubu", path: "/achievements", from: "from-amber-100", to: "to-orange-100" },
+  { emoji: "✨", title: "Wajib dibuka TERAKHIR", path: "/ending", from: "from-violet-100", to: "to-purple-100" },
 ];
 
 function getRelationshipDuration(startDate: Date) {
@@ -50,7 +50,7 @@ export default function MainMenu() {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
           <div className="text-4xl mb-3">💑</div>
-          <h1 className="text-2xl font-serif font-bold text-foreground">Untuk Kamu, Sayang</h1>
+          <h1 className="text-2xl font-serif font-bold text-foreground">Aku bikin ini semua buat bubuu</h1>
           <div className="inline-block mt-3 px-5 py-2 bg-primary/10 rounded-full">
             <p className="text-sm text-foreground">
               Kita udah bersama selama{" "}

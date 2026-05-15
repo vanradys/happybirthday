@@ -63,12 +63,13 @@ export const config = {
   ],
 
   timeline: [
-    { date: "Januari 2023", emoji: "👀", title: "Hari Pertama Kenal", description: "Nggak nyangka pertemuan itu bakal jadi awal dari segalanya." },
-    { date: "Februari 2023", emoji: "📞", title: "First Call", description: "Ngobrol sampai subuh, nggak terasa waktu berlalu." },
-    { date: "Maret 2023", emoji: "😂", title: "Momen Paling Kocak", description: "Masih ngakak kalau inget kejadian itu." },
-    { date: "Juni 2023", emoji: "😤", title: "First Fight", description: "Itu pertama kali kita berantem, dan aku belajar banyak dari situ." },
-    { date: "Agustus 2023", emoji: "✨", title: "Momen Paling Berkesan", description: "Waktu itu aku sadar, kamu memang yang terbaik buat aku." },
-  ],
+  { date: "19 Agustus 2023", emoji: "👀", title: "Awal Kenal", description: "Awalnya cuma saling sapa karena info manajemen kelas C, siapa sangka dari chat sesingkat itu semuanya dimulai."  },
+  { date: "1 September 2023", emoji: "🏆", title: "Mulai Sering Chat", description: "Dari ajakan ikut lomba, obrolan kecil kita pelan-pelan jadi makin sering dan makin nyaman."  },
+  { date: "26 Oktober 2023", emoji: "💗", title: "Hari Kita Mulai", description: "Hari di mana kita resmi mulai jadi bagian penting dalam hidup satu sama lain." },
+  { date: "26 Oktober 2024", emoji: "🐈", title: "Bahasa Kecil Kita", description: "Bubis, bubuu, goodmeowning, kucink, dan semua bahasa lucu yang akhirnya jadi dunia kecil milik kita berdua." },
+  { date: "26 Oktober2025", emoji: "☁️", title: "Safe Place", description: "Pelan-pelan kita bukan cuma jadi pasangan, tapi juga jadi tempat pulang dan tempat bersandar satu sama lain." },
+  { date: "Sekarang", emoji: "💍", title: "Masa Depan Kita", description: "Dari mimpi, rencana, sampai obrolan random tentang masa depan, aku senang karena di setiap versi hidupmu nanti, ada aku di sana." }
+],
 
   gallery: [
     { caption: "Momen favorit aku sama kamu 🌸" },
@@ -93,11 +94,11 @@ export const config = {
   ],
 
   achievements: [
-    { emoji: "🌪️", title: "Mood Swing Survivor", description: "Successfully survived my mood swings" },
-    { emoji: "🧠", title: "Overthink Listener", description: "Professional overthink listener" },
-    { emoji: "✅", title: "Certified Good Boy", description: "Certified good boy — verified!" },
-    { emoji: "⭐", title: "Main Character", description: "Main character in my heart" },
+    { emoji: "🌪️", title: "Mood Swing Survivor", description: "Tetap stay walaupun akuu lagi pundung mode !" },
+    { emoji: "🧠", title: "Overthink Listener", description: "Always listens, even when the thoughts get messy" },
+    { emoji: "✅", title: "Certified Good Boy", description: "Officially verified as the sweetest boy ever — verified!" },
+    { emoji: "⭐", title: "Main Character", description: "Forever the main character in bubuu little world" },
     { emoji: "🎯", title: "Always There", description: "Always shows up when it matters" },
-    { emoji: "🫂", title: "Best Hugger", description: "World's best virtual hugger" },
+    { emoji: "🫂", title: "Best Provider", description: "Best sweet words provider in Meowland" },
   ],
 };

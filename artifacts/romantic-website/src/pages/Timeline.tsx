@@ -44,7 +44,7 @@ export default function Timeline() {
         </button>
 
         <h1 className="text-2xl font-serif font-bold text-center text-foreground mb-1">
-          Memory Timeline
+          Timeline Kitaa
         </h1>
         <p className="text-center text-muted-foreground text-sm mb-10">
           Momen-momen yang selalu aku ingat
