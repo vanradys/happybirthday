@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-
+import { config } from "@/config";
 
 type Candle = {
   id: number;
@@ -25,7 +25,7 @@ export default function BirthdayIntroOverlay() {
 
   const [showIntro, setShowIntro] = useState(shouldShowOnThisPage);
   const [progress, setProgress] = useState(0);
-  const [phase, setPhase] = useState<"loading" | "cake" | "wish" | "envelope">("loading");
+  const [phase, setPhase] = useState<"loading" | "cake" | "wish" | "letter" | "envelope">("loading");
 
   useEffect(() => {
     if (!showIntro || phase !== "loading") return;
@@ -170,7 +170,7 @@ export default function BirthdayIntroOverlay() {
               </div>
 
               <h1 className="birthday-cake-heading">
-                Make a Wish𓇼
+                Make a Wish★
               </h1>
 
               <div className="birthday-cake-actions">
@@ -186,7 +186,7 @@ export default function BirthdayIntroOverlay() {
                   }}
                   className="birthday-outline-button"
                 >
-                  Tiup Lilin 🕯️
+                  Tiup Lilin 🕯
                 </button>
 
                 <button
@@ -194,7 +194,7 @@ export default function BirthdayIntroOverlay() {
                   onClick={() => setPhase("wish")}
                   className="birthday-solid-button"
                 >
-                  Lanjut 𓇼
+                  Lanjut★
                 </button>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function BirthdayIntroOverlay() {
             </p>
             <button
               type="button"
-              onClick={() => setPhase("envelope")}
+              onClick={() => setPhase("letter")}
               className="rounded-full bg-[#ffd166] px-7 py-3 font-bold text-[#5a1414] shadow-lg hover:scale-105 transition"
             >
               Open Letter ✉︎
@@ -238,6 +238,34 @@ export default function BirthdayIntroOverlay() {
           </div>
         )}
 
+              {phase === "letter" && (
+        <div className="birthday-intro-pop rounded-3xl border border-white/10 bg-[#fff8ec] p-7 text-[#5a1414] shadow-2xl">
+          <div className="mb-4 text-5xl">💌</div>
+
+          <h2 className="mb-5 font-serif text-2xl font-bold leading-tight">
+            {config.letters.birthday.title}
+          </h2>
+
+          <div className="space-y-4 text-left">
+            {config.letters.birthday.paragraphs.map((paragraph, index) => (
+              <p
+                key={index}
+                className="font-serif text-sm leading-relaxed text-[#5a1414]/80"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setPhase("envelope")}
+            className="mt-7 rounded-full bg-[#8b1e1e] px-7 py-3 font-bold text-white shadow-lg hover:scale-105 transition"
+          >
+            Lanjut ❤︎
+          </button>
+        </div>
+      )}
         {phase === "envelope" && (
           <div className="birthday-intro-pop rounded-3xl border border-white/10 bg-[#fff8ec] p-8 text-[#5a1414] shadow-2xl">
             <div className="mb-4 text-8xl birthday-envelope-float">💌</div>

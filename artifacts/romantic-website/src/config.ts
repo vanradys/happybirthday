@@ -2,14 +2,14 @@ export const config = {
   password: "sayang",
   coupleNames: { from: "Aku", to: "Kamu" },
   relationshipStart: new Date("2023-01-15"),
-  whatsappNumber: "6281234567890",
+  whatsappNumber: "6282114072428",
 
   letters: {
     birthday: {
-      title: "Selamat Ulang Tahun, Sayang 🎂",
+      title: "Selamat Ulang Tahun, Sayangkuu ❤︎",
       paragraphs: [
-        "Di hari yang spesial ini, aku ingin kamu tahu...",
-        "Setiap tahun bersamamu adalah hadiah terbaik...",
+        "Di hari yang spesial ini, aku ingin kamu tau...",
+        "Setiap waktu bersamamu adalah hadiah terbaik...",
         "Semoga semua impianmu menjadi nyata...",
         "Aku sayang kamu lebih dari kata-kata bisa ungkapkan."
       ]

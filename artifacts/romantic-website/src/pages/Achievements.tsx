@@ -44,8 +44,8 @@ export default function Achievements() {
               <div className="flex items-start gap-4">
                 <div className="text-4xl flex-shrink-0">{item.emoji}</div>
                 <div>
-                  <h3 className="font-bold text-foreground mb-1">{item.title}</h3>
-                  <p className="text-xs text-muted-foreground">{item.description}</p>
+                  <h3 className="font-bold text-black mb-1">{item.title}</h3>
+                  <p className="text-xs text-black/70">{item.description}</p>
                 </div>
               </div>
               <div className="mt-3 h-1.5 rounded-full bg-amber-100 overflow-hidden">
