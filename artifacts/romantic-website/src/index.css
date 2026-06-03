@@ -861,3 +861,72 @@ h1.text-primary {
     transform: skewX(5deg) scale(1);
   }
 }
+
+.birthday-cake-stage {
+  min-height: 520px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 18px !important;
+  padding-top: 10px !important;
+}
+
+.cute-cake {
+  width: 300px !important;
+  height: 300px !important;
+  margin: 0 auto 10px !important;
+  transform: scale(0.9);
+  transform-origin: center top;
+}
+
+.birthday-cake-stage > .cute-cake + button {
+  margin-top: 18px !important;
+}
+
+.birthday-cake-stage button {
+  position: relative !important;
+  z-index: 20 !important;
+}
+
+.birthday-cake-stage + h1,
+.birthday-cake-stage ~ h1,
+.birthday-cake-stage ~ p {
+  margin-top: 12px !important;
+}
+
+.cute-cake .cake-title {
+  top: -20px !important;
+}
+
+.cute-cake .cake-plate {
+  bottom: 10px !important;
+}
+
+.cute-cake .cake-layer-top {
+  top: 118px !important;
+}
+
+.cute-cake .cake-layer-middle {
+  top: 151px !important;
+}
+
+.cute-cake .cake-layer-bottom {
+  top: 184px !important;
+}
+
+.cute-cake .cake-icing {
+  top: 114px !important;
+}
+
+.cute-cake .cake-drip-1 {
+  top: 161px !important;
+}
+
+.cute-cake .cake-drip-2 {
+  top: 163px !important;
+}
+
+.cute-cake .cake-drip-3 {
+  top: 156px !important;
+}

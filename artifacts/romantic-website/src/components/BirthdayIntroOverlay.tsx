@@ -81,11 +81,11 @@ export default function BirthdayIntroOverlay() {
             </div>
 
             <h1 className="mb-8 font-serif text-3xl leading-tight text-[#ffd166] sm:text-4xl birthday-intro-glow">
-              POV: One day,
+              One day,
               <br />
-              one moment,
+              One moment,
               <br />
-              one birthday surprise.
+              One birthday surprise.
             </h1>
 
             <div className="mx-auto mb-6">
