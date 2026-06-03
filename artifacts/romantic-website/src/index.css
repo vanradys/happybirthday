@@ -615,3 +615,22 @@ h1.text-pink-600,
 h1.text-primary {
   color: #fff7e8 !important;
 }
+
+.paper-texture h1,
+.paper-texture h2,
+.paper-texture h3,
+.paper-texture p,
+.paper-texture span,
+.paper-texture div {
+  color: #2b0808 !important;
+}
+
+.paper-texture .italic,
+.paper-texture .text-muted-foreground {
+  color: rgba(43, 8, 8, 0.65) !important;
+}
+
+.paper-texture button,
+.paper-texture button * {
+  color: #fff7e8 !important;
+}
