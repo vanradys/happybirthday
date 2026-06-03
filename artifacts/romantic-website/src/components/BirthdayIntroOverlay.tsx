@@ -2,13 +2,12 @@ import { useEffect, useMemo, useState } from "react";
 
 export default function BirthdayIntroOverlay() {
   const shouldShowOnThisPage = useMemo(() => {
-    if (typeof window === "undefined") return false;
+  if (typeof window === "undefined") return false;
 
-    const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
-    const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+  const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
 
-    return currentPath === "/" || (basePath !== "" && currentPath === basePath);
-  }, []);
+  return currentPath === "/";
+}, []);
 
   const [showIntro, setShowIntro] = useState(shouldShowOnThisPage);
   const [progress, setProgress] = useState(0);
