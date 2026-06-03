@@ -1,13 +1,27 @@
 import { useEffect, useMemo, useState } from "react";
 
+
+type Candle = {
+  id: number;
+  left: number;
+  top: number;
+  isBlown: boolean;
+};
+
 export default function BirthdayIntroOverlay() {
+  const [candles, setCandles] = useState<Candle[]>([
+    { id: 1, left: 95, top: 105, isBlown: false },
+    { id: 2, left: 135, top: 92, isBlown: false },
+    { id: 3, left: 175, top: 105, isBlown: false },
+  ]);
+
   const shouldShowOnThisPage = useMemo(() => {
-  if (typeof window === "undefined") return false;
+    if (typeof window === "undefined") return false;
 
-  const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+    const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
 
-  return currentPath === "/";
-}, []);
+    return currentPath === "/";
+  }, []);
 
   const [showIntro, setShowIntro] = useState(shouldShowOnThisPage);
   const [progress, setProgress] = useState(0);
@@ -114,30 +128,75 @@ export default function BirthdayIntroOverlay() {
             <div className="relative mx-auto mb-7 flex h-48 w-48 items-center justify-center">
               <div className="birthday-firework birthday-firework-left" />
               <div className="birthday-firework birthday-firework-right" />
+              <div className="birthday-cake-stage">
+                <div
+                  className="cute-cake"
+                  onClick={(event) => {
+                    const rect = event.currentTarget.getBoundingClientRect();
+                    const left = event.clientX - rect.left;
+                    const top = event.clientY - rect.top;
+
+                    setCandles((prev) => [
+                      ...prev,
+                      {
+                        id: Date.now(),
+                        left,
+                        top,
+                          isBlown: false,
+                      },
+                    ]);
+                  }}
+                >
+                  <div className="cake-title">HAPPY BIRTHDAY!</div>
+
+                  <div className="cake-plate" />
+                  <div className="cake-layer cake-layer-bottom" />
+                  <div className="cake-layer cake-layer-middle" />
+                  <div className="cake-layer cake-layer-top" />
+                  <div className="cake-icing" />
+                  <div className="cake-drip cake-drip-1" />
+                  <div className="cake-drip cake-drip-2" />
+                  <div className="cake-drip cake-drip-3" />
+
+                  {candles.map((candle) => (
+                    <div
+                      key={candle.id}
+                      className="cake-candle-real"
+                      style={{
+                        left: `${candle.left}px`,
+                        top: `${candle.top}px`,
+                      }}
+                    >
+                      {!candle.isBlown && <div className="cake-flame-real" />}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 flex flex-col items-center gap-3">
+              <button
+                type="button"
+                onClick={() => {
+                  setCandles((prev) =>
+                    prev.map((candle) => ({
+                      ...candle,
+                      isBlown: true,
+                    })),
+                  );
+                }}
+                className="px-6 py-3 rounded-full border border-white/60 text-white font-bold hover:bg-white hover:text-black transition"
+              >
+                Tiup Lilin 🕯️
+              </button>
+
               <button
                 type="button"
                 onClick={() => setPhase("wish")}
-                className="birthday-css-cake hover:scale-110 transition"
-                aria-label="Make a wish"
+                className="px-7 py-3 rounded-full bg-primary text-primary-foreground font-bold shadow-lg hover:scale-105 transition"
               >
-                <span className="cake-candle">
-                  <span className="cake-flame" />
-                </span>
-                <span className="cake-top">
-                  <span className="cake-sprinkle sprinkle-1" />
-                  <span className="cake-sprinkle sprinkle-2" />
-                  <span className="cake-sprinkle sprinkle-3" />
-                  <span className="cake-sprinkle sprinkle-4" />
-                </span>
-                <span className="cake-body">
-                  <span className="cake-face">
-                    <span className="cake-eye" />
-                    <span className="cake-smile" />
-                    <span className="cake-eye" />
-                  </span>
-                </span>
-                <span className="cake-plate" />
+                Lanjut 𓇼
               </button>
+            </div>
+              </div>
             </div>
 
             <h2 className="mb-2 font-serif text-3xl text-[#ffd166] birthday-intro-glow">

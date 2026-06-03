@@ -685,138 +685,179 @@ h1.text-primary {
   color: #000000 !important;
 }
 
-.birthday-css-cake {
-  position: relative !important;
-  display: block !important;
-  width: 180px !important;
-  height: 170px !important;
-  margin: 0 auto 28px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
-  cursor: pointer;
-  overflow: visible !important;
-  color: initial !important;
-  animation: birthday-cake-bounce 1.6s ease-in-out infinite;
+.birthday-cake-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.birthday-css-cake *,
-.birthday-css-cake span {
+.cute-cake {
+  position: relative;
+  width: 300px;
+  height: 280px;
+  margin: 0 auto;
+  animation: birthday-float 1.8s ease-in-out infinite;
+}
+
+.cake-title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  padding: 10px 14px;
+  background: #fff7e8;
+  color: #7b020b !important;
+  border: 3px solid #ffd166;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 26px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 20;
+}
+
+.cute-cake .cake-plate {
+  width: 270px;
+  height: 90px;
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  background-color: #d8d8d8 !important;
+  border-radius: 50%;
+  box-shadow: 0 8px 0 #b7b7b7, 0 18px 32px rgba(0, 0, 0, 0.35);
+}
+
+.cute-cake .cake-layer {
   position: absolute;
   display: block;
-  box-sizing: border-box;
-  color: initial !important;
-}
-
-.birthday-css-cake .cake-plate {
-  left: 24px;
-  bottom: 8px;
-  width: 132px;
-  height: 26px;
-  background: #fff7e8 !important;
-  border: 6px solid #050303 !important;
-  border-radius: 999px;
-  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.18);
-}
-
-.birthday-css-cake .cake-body {
-  left: 32px;
-  bottom: 24px;
-  width: 116px;
-  height: 74px;
-  background: linear-gradient(180deg, #d9a05f 0%, #b8753a 100%) !important;
-  border: 7px solid #050303 !important;
-  border-radius: 12px 12px 28px 28px;
-  overflow: hidden;
-}
-
-.birthday-css-cake .cake-top {
-  left: 22px;
-  bottom: 82px;
-  width: 136px;
-  height: 58px;
-  background: #5b2b1f !important;
-  border: 7px solid #050303 !important;
-  border-radius: 50% 50% 22px 22px;
-  overflow: hidden;
-}
-
-.birthday-css-cake .cake-candle {
-  left: 82px;
-  bottom: 126px;
-  width: 16px;
-  height: 50px;
-  background: linear-gradient(90deg, #4cc9f0 0 35%, #90e0ef 35% 65%, #4cc9f0 65%) !important;
-  border: 5px solid #050303 !important;
-  border-radius: 999px;
-  z-index: 5;
-}
-
-.birthday-css-cake .cake-flame {
-  left: 50%;
-  top: -24px;
-  width: 18px;
-  height: 26px;
-  transform: translateX(-50%);
-  background: linear-gradient(180deg, #ffef6e, #ff6b35) !important;
-  border: 5px solid #050303 !important;
+  width: 250px;
+  height: 88px;
+  left: 25px;
   border-radius: 50%;
-  animation: cake-flame-wiggle 0.55s ease-in-out infinite alternate;
+  background-color: #b3222b !important;
+  box-shadow:
+    0 2px 0 #c94a50,
+    0 8px 0 #9f1d23,
+    0 14px 0 #9f1d23,
+    0 20px 0 #9f1d23,
+    0 26px 0 #9f1d23;
 }
 
-.birthday-css-cake .cake-face {
-  left: 27px;
-  top: 27px;
-  display: flex !important;
-  align-items: center;
-  gap: 13px;
+.cake-layer-top {
+  top: 112px;
+}
+
+.cake-layer-middle {
+  top: 145px;
+}
+
+.cake-layer-bottom {
+  top: 178px;
+}
+
+.cute-cake .cake-icing {
   position: absolute;
+  top: 108px;
+  left: 30px;
+  background-color: #fff7e8 !important;
+  width: 240px;
+  height: 85px;
+  border-radius: 50%;
+  z-index: 5;
+  box-shadow: inset 0 0 8px rgba(90, 20, 20, 0.12);
 }
 
-.birthday-css-cake .cake-eye {
-  position: relative;
-  width: 10px;
-  height: 10px;
-  background: #050303 !important;
-  border-radius: 999px;
+.cute-cake .cake-drip {
+  position: absolute;
+  display: block;
+  background-color: #fff7e8 !important;
+  z-index: 6;
 }
 
-.birthday-css-cake .cake-smile {
-  position: relative;
-  width: 22px;
-  height: 12px;
-  border-bottom: 5px solid #050303 !important;
-  border-radius: 0 0 999px 999px;
+.cute-cake .cake-drip-1 {
+  top: 155px;
+  left: 35px;
+  width: 42px;
+  height: 55px;
+  border-radius: 0 0 24px 24px;
+  transform: skewY(12deg);
 }
 
-.birthday-css-cake .cake-sprinkle {
-  width: 8px;
-  height: 22px;
-  border-radius: 999px;
-  transform: rotate(45deg);
-  z-index: 3;
+.cute-cake .cake-drip-2 {
+  top: 157px;
+  left: 122px;
+  width: 78px;
+  height: 62px;
+  border-radius: 0 0 40px 40px;
 }
 
-.birthday-css-cake .sprinkle-1 {
-  left: 26px;
-  top: 20px;
-  background: #ff7eb6 !important;
+.cute-cake .cake-drip-3 {
+  top: 150px;
+  left: 220px;
+  width: 50px;
+  height: 72px;
+  border-radius: 0 0 28px 28px;
+  transform: skewY(-10deg);
 }
 
-.birthday-css-cake .sprinkle-2 {
-  left: 58px;
-  top: 12px;
-  background: #ffd166 !important;
+.cake-candle-real {
+  position: absolute;
+  width: 13px;
+  height: 38px;
+  background-color: #7b020b !important;
+  border-radius: 8px 8px 4px 4px;
+  z-index: 30;
+  transform: translate(-50%, -100%);
 }
 
-.birthday-css-cake .sprinkle-3 {
-  right: 34px;
-  top: 18px;
-  background: #4cc9f0 !important;
+.cake-candle-real::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 13px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #ad030f !important;
 }
 
-.birthday-css-cake .sprinkle-4 {
-  right: 56px;
-  top: 34px;
-  background: #caffbf !important;
+.cake-flame-real {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  width: 13px;
+  height: 28px;
+  margin-left: -6.5px;
+  background: orange !important;
+  border-radius: 50% 50% 45% 45%;
+  box-shadow:
+    0 0 10px rgba(255, 165, 0, 0.7),
+    0 0 24px rgba(255, 165, 0, 0.55),
+    0 0 48px rgba(255, 165, 0, 0.35);
+  transform-origin: 50% 90%;
+  animation: cake-flame-flicker 1s ease-in-out alternate infinite;
+}
+
+@keyframes cake-flame-flicker {
+  0% {
+    transform: skewX(5deg) scale(1);
+  }
+
+  25% {
+    transform: skewX(-5deg) scale(1.05);
+  }
+
+  50% {
+    transform: skewX(10deg) scale(0.96);
+  }
+
+  75% {
+    transform: skewX(-10deg) scale(1.06);
+  }
+
+  100% {
+    transform: skewX(5deg) scale(1);
+  }
 }
