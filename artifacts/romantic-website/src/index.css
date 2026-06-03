@@ -607,3 +607,11 @@ body::after {
     opacity: 0;
   }
 }
+
+.min-h-screen h1,
+.min-h-screen h1 *,
+h1.text-rose-600,
+h1.text-pink-600,
+h1.text-primary {
+  color: #fff7e8 !important;
+}
