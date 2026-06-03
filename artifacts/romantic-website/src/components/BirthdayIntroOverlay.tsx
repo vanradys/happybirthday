@@ -124,88 +124,80 @@ export default function BirthdayIntroOverlay() {
         )}
 
         {phase === "cake" && (
-          <div className="birthday-intro-pop">
-            <div className="relative mx-auto mb-7 flex h-48 w-48 items-center justify-center">
-              <div className="birthday-firework birthday-firework-left" />
-              <div className="birthday-firework birthday-firework-right" />
-              <div className="birthday-cake-stage">
-                <div
-                  className="cute-cake"
-                  onClick={(event) => {
-                    const rect = event.currentTarget.getBoundingClientRect();
-                    const left = event.clientX - rect.left;
-                    const top = event.clientY - rect.top;
+          <div className="birthday-cake-scene">
+            <div className="birthday-cake-stage">
+              <div
+                className="cute-cake"
+                onClick={(event) => {
+                  const rect = event.currentTarget.getBoundingClientRect();
+                  const left = event.clientX - rect.left;
+                  const top = event.clientY - rect.top;
 
-                    setCandles((prev) => [
-                      ...prev,
-                      {
-                        id: Date.now(),
-                        left,
-                        top,
-                          isBlown: false,
-                      },
-                    ]);
-                  }}
-                >
-                  <div className="cake-title">HAPPY BIRTHDAY!</div>
-
-                  <div className="cake-plate" />
-                  <div className="cake-layer cake-layer-bottom" />
-                  <div className="cake-layer cake-layer-middle" />
-                  <div className="cake-layer cake-layer-top" />
-                  <div className="cake-icing" />
-                  <div className="cake-drip cake-drip-1" />
-                  <div className="cake-drip cake-drip-2" />
-                  <div className="cake-drip cake-drip-3" />
-
-                  {candles.map((candle) => (
-                    <div
-                      key={candle.id}
-                      className="cake-candle-real"
-                      style={{
-                        left: `${candle.left}px`,
-                        top: `${candle.top}px`,
-                      }}
-                    >
-                      {!candle.isBlown && <div className="cake-flame-real" />}
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-6 flex flex-col items-center gap-3">
-              <button
-                type="button"
-                onClick={() => {
-                  setCandles((prev) =>
-                    prev.map((candle) => ({
-                      ...candle,
-                      isBlown: true,
-                    })),
-                  );
+                  setCandles((prev) => [
+                    ...prev,
+                    {
+                      id: Date.now(),
+                      left,
+                      top,
+                      isBlown: false,
+                    },
+                  ]);
                 }}
-                className="px-6 py-3 rounded-full border border-white/60 text-white font-bold hover:bg-white hover:text-black transition"
               >
-                Tiup Lilin 🕯️
-              </button>
+                <div className="cake-title">HAPPY BIRTHDAY!</div>
 
-              <button
-                type="button"
-                onClick={() => setPhase("wish")}
-                className="px-7 py-3 rounded-full bg-primary text-primary-foreground font-bold shadow-lg hover:scale-105 transition"
-              >
-                Lanjut 𓇼
-              </button>
-            </div>
+                <div className="cake-plate" />
+                <div className="cake-layer cake-layer-bottom" />
+                <div className="cake-layer cake-layer-middle" />
+                <div className="cake-layer cake-layer-top" />
+                <div className="cake-icing" />
+                <div className="cake-drip cake-drip-1" />
+                <div className="cake-drip cake-drip-2" />
+                <div className="cake-drip cake-drip-3" />
+
+                {candles.map((candle) => (
+                  <div
+                    key={candle.id}
+                    className="cake-candle-real"
+                    style={{
+                      left: `${candle.left}px`,
+                      top: `${candle.top}px`,
+                    }}
+                  >
+                    {!candle.isBlown && <div className="cake-flame-real" />}
+                  </div>
+                ))}
+              </div>
+
+              <h1 className="birthday-cake-heading">
+                Make a Wish 𓇼
+              </h1>
+
+              <div className="birthday-cake-actions">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setCandles((prev) =>
+                      prev.map((candle) => ({
+                        ...candle,
+                        isBlown: true,
+                      })),
+                    );
+                  }}
+                  className="birthday-outline-button"
+                >
+                  Tiup Lilin 🕯️
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setPhase("wish")}
+                  className="birthday-solid-button"
+                >
+                  Lanjut 𓇼
+                </button>
               </div>
             </div>
-
-            <h2 className="mb-2 font-serif text-3xl text-[#ffd166] birthday-intro-glow">
-              Make a Wish 𓇼
-
-            </h2>
-            <p className="mb-6 text-sm text-white/70">
-              Klik kuenya buat lanjut ♡
-            </p>
           </div>
         )}
 

@@ -930,3 +930,85 @@ h1.text-primary {
 .cute-cake .cake-drip-3 {
   top: 156px !important;
 }
+
+.birthday-cake-scene {
+  min-height: 100vh !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 80px 16px 48px !important;
+}
+
+.birthday-cake-stage {
+  min-height: auto !important;
+  width: 100% !important;
+  max-width: 520px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 18px !important;
+}
+
+.birthday-cake-stage .cute-cake {
+  width: 300px !important;
+  height: 300px !important;
+  margin: 0 auto !important;
+  transform: scale(0.9) !important;
+  transform-origin: center center !important;
+}
+
+.birthday-cake-stage .cake-title {
+  top: 0 !important;
+}
+
+.birthday-cake-heading {
+  margin-top: 8px !important;
+  margin-bottom: 0 !important;
+  font-size: clamp(2.3rem, 5vw, 3.8rem) !important;
+  line-height: 1 !important;
+  color: #ffd166 !important;
+  text-align: center !important;
+}
+
+.birthday-cake-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 14px !important;
+  flex-wrap: wrap !important;
+  margin-top: 4px !important;
+}
+
+.birthday-outline-button {
+  padding: 12px 26px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 247, 232, 0.75) !important;
+  background: transparent !important;
+  color: #fff7e8 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 24px rgba(255, 247, 232, 0.08) !important;
+  transition: 0.2s ease !important;
+}
+
+.birthday-outline-button:hover {
+  background: #fff7e8 !important;
+  color: #000000 !important;
+}
+
+.birthday-solid-button {
+  padding: 12px 30px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 247, 232, 0.18) !important;
+  background: #9f1d23 !important;
+  color: #fff7e8 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28) !important;
+  transition: 0.2s ease !important;
+}
+
+.birthday-solid-button:hover {
+  background: #fff7e8 !important;
+  color: #000000 !important;
+}
