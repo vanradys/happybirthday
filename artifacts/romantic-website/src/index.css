@@ -634,3 +634,27 @@ h1.text-primary {
 .paper-texture button * {
   color: #fff7e8 !important;
 }
+
+.bg-card,
+.bg-card * {
+  color: #2b0808 !important;
+}
+
+.bg-card h1,
+.bg-card h2,
+.bg-card h3,
+.bg-card p,
+.bg-card span,
+.bg-card div {
+  color: #2b0808 !important;
+}
+
+.bg-card .text-muted-foreground,
+.bg-card p {
+  color: rgba(43, 8, 8, 0.72) !important;
+}
+
+.bg-card .font-bold,
+.bg-card .font-semibold {
+  color: #2b0808 !important;
+}
