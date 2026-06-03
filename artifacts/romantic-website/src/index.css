@@ -359,130 +359,64 @@
   }
 }
 
-body {
-  background:
-    radial-gradient(circle at center, rgba(124, 24, 24, 0.62) 0%, rgba(55, 10, 10, 0.42) 35%, rgba(5, 3, 3, 1) 78%),
-    #050303;
-}
-
+/* Global dark red / gold theme */
+body,
 .bg-background {
   background:
-    radial-gradient(circle at center, rgba(124, 24, 24, 0.62) 0%, rgba(55, 10, 10, 0.42) 35%, rgba(5, 3, 3, 1) 78%),
-    #050303 !important;
+    radial-gradient(circle at center, rgba(120, 18, 18, 0.88) 0%, rgba(75, 10, 10, 0.72) 38%, rgba(18, 2, 2, 1) 82%),
+    #100202 !important;
 }
 
-.text-foreground {
-  color: #fff4dc !important;
-}
-
-.text-primary {
-  color: #ffd166 !important;
-}
-
-.bg-primary {
-  background-color: #9f1d23 !important;
-}
-
-.bg-primary\/10 {
-  background-color: rgba(159, 29, 35, 0.28) !important;
-}
-
-.bg-white {
-  background-color: #fff7e8 !important;
-}
-
-.text-muted-foreground {
-  color: rgba(255, 244, 220, 0.72) !important;
-}
-
-.from-rose-50,
-.from-pink-50,
-.from-red-50,
-.from-rose-100,
-.from-pink-100,
-.from-red-100 {
-  --tw-gradient-from: #050303 var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: rgba(5, 3, 3, 0) var(--tw-gradient-to-position) !important;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
-}
-
-.via-pink-50,
-.via-rose-50,
-.via-red-50,
-.via-pink-100,
-.via-rose-100,
-.via-red-100 {
-  --tw-gradient-via: rgba(124, 24, 24, 0.62) var(--tw-gradient-via-position) !important;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to) !important;
-}
-
-.to-red-50,
-.to-pink-50,
-.to-rose-50,
-.to-red-100,
-.to-pink-100,
-.to-rose-100 {
-  --tw-gradient-to: #050303 var(--tw-gradient-to-position) !important;
-}
-
+.text-foreground,
+.min-h-screen h1,
+.min-h-screen h1 *,
+.text-primary,
 .text-rose-600,
 .text-rose-500,
 .text-rose-400,
 .text-pink-600,
 .text-pink-500,
 .text-pink-400 {
-  color: #ffd166 !important;
+  color: #fff7e8 !important;
 }
 
+.text-muted-foreground {
+  color: rgba(255, 244, 220, 0.72) !important;
+}
+
+.bg-primary,
 .bg-rose-600,
 .bg-rose-700,
 .bg-pink-600,
 .bg-pink-700 {
   background-color: #9f1d23 !important;
+  color: #fff7e8 !important;
 }
 
 .bg-white,
-.bg-card,
-[class*="bg-[#fff"],
-[class*="bg-[#FFF"] {
+.bg-card {
+  background-color: #fff7e8 !important;
   color: #2b0808 !important;
 }
 
-.bg-white h1,
-.bg-white h2,
-.bg-white h3,
-.bg-white p,
-.bg-white span,
-.bg-white label,
-.bg-card h1,
-.bg-card h2,
-.bg-card h3,
-.bg-card p,
-.bg-card span,
-.bg-card label {
+.bg-white *,
+.bg-card *,
+.paper-texture *,
+.paper-texture h1,
+.paper-texture h2,
+.paper-texture h3,
+.paper-texture p,
+.paper-texture span,
+.paper-texture div {
   color: #2b0808 !important;
 }
 
-.bg-white .text-muted-foreground,
-.bg-card .text-muted-foreground {
-  color: rgba(43, 8, 8, 0.65) !important;
-}
-
-.bg-white .text-primary,
-.bg-card .text-primary {
-  color: #9f1d23 !important;
-}
-
+.paper-texture button,
+.paper-texture button *,
 .bg-white button,
 .bg-card button {
   background-color: #9f1d23 !important;
   color: #fff7e8 !important;
-}
-
-.bg-white button:hover,
-.bg-card button:hover {
-  background-color: #ffd166 !important;
-  color: #2b0808 !important;
 }
 
 input,
@@ -498,13 +432,10 @@ textarea::placeholder {
   color: rgba(255, 247, 232, 0.62) !important;
 }
 
-body,
-.bg-background {
-  background:
-    radial-gradient(circle at center, rgba(120, 18, 18, 0.88) 0%, rgba(75, 10, 10, 0.72) 38%, rgba(18, 2, 2, 1) 82%),
-    #100202 !important;
-}
-
+/* Menu cards */
+.from-rose-50,
+.from-pink-50,
+.from-red-50,
 .from-rose-100,
 .from-pink-100,
 .from-purple-100,
@@ -520,6 +451,12 @@ body,
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
 }
 
+.via-pink-50,
+.via-rose-50,
+.via-red-50 {
+  --tw-gradient-via: rgba(124, 24, 24, 0.62) var(--tw-gradient-via-position) !important;
+}
+
 .to-pink-200,
 .to-pink-100,
 .to-red-100,
@@ -528,33 +465,17 @@ body,
 .to-green-100,
 .to-orange-100,
 .to-blue-100,
-.to-teal-100 {
+.to-teal-100,
+.to-rose-50 {
   --tw-gradient-to: #a83232 var(--tw-gradient-to-position) !important;
 }
 
-button[class*="bg-gradient-to-br"] {
-  color: #fff7e8 !important;
-  border: 1px solid rgba(255, 247, 232, 0.18);
-}
-
-button[class*="bg-gradient-to-br"] p,
-button[class*="bg-gradient-to-br"] span,
-button[class*="bg-gradient-to-br"] div {
+button[class*="bg-gradient-to-br"],
+button[class*="bg-gradient-to-br"] * {
   color: #fff7e8 !important;
 }
 
-button[class*="bg-gradient-to-br"]:hover {
-  filter: brightness(1.15);
-}
-
-.text-primary,
-.text-rose-600,
-.text-pink-600,
-.text-rose-500,
-.text-pink-500 {
-  color: #fff7e8 !important;
-}
-
+/* White floating hearts */
 body::before {
   content: "♡   ♡   ♡   ♡   ♡";
   position: fixed;
@@ -594,10 +515,7 @@ body::after {
     opacity: 0;
   }
 
-  10% {
-    opacity: 1;
-  }
-
+  10%,
   90% {
     opacity: 1;
   }
@@ -608,57 +526,7 @@ body::after {
   }
 }
 
-.min-h-screen h1,
-.min-h-screen h1 *,
-h1.text-rose-600,
-h1.text-pink-600,
-h1.text-primary {
-  color: #fff7e8 !important;
-}
-
-.paper-texture h1,
-.paper-texture h2,
-.paper-texture h3,
-.paper-texture p,
-.paper-texture span,
-.paper-texture div {
-  color: #2b0808 !important;
-}
-
-.paper-texture .italic,
-.paper-texture .text-muted-foreground {
-  color: rgba(43, 8, 8, 0.65) !important;
-}
-
-.paper-texture button,
-.paper-texture button * {
-  color: #fff7e8 !important;
-}
-
-.bg-card,
-.bg-card * {
-  color: #2b0808 !important;
-}
-
-.bg-card h1,
-.bg-card h2,
-.bg-card h3,
-.bg-card p,
-.bg-card span,
-.bg-card div {
-  color: #2b0808 !important;
-}
-
-.bg-card .text-muted-foreground,
-.bg-card p {
-  color: rgba(43, 8, 8, 0.72) !important;
-}
-
-.bg-card .font-bold,
-.bg-card .font-semibold {
-  color: #2b0808 !important;
-}
-
+/* Ending WhatsApp button */
 .bg-green-500,
 .bg-green-600,
 .bg-emerald-500,
@@ -672,37 +540,48 @@ h1.text-primary {
 .bg-green-500:hover,
 .bg-green-600:hover,
 .bg-emerald-500:hover,
-.bg-emerald-600:hover {
-  background-color: #fff7e8 !important;
-  color: #000000 !important;
-  border-color: #fff7e8 !important;
-}
-
+.bg-emerald-600:hover,
 .bg-green-500:hover *,
 .bg-green-600:hover *,
 .bg-emerald-500:hover *,
 .bg-emerald-600:hover * {
+  background-color: #fff7e8 !important;
   color: #000000 !important;
 }
 
+/* Birthday cake scene */
+.birthday-cake-scene {
+  min-height: 100vh !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 80px 16px 48px !important;
+}
+
 .birthday-cake-stage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100% !important;
+  max-width: 520px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 18px !important;
 }
 
 .cute-cake {
   position: relative;
-  width: 300px;
-  height: 280px;
-  margin: 0 auto;
+  width: 300px !important;
+  height: 300px !important;
+  margin: 54px auto 8px !important;
+  transform: scale(0.82) !important;
+  transform-origin: center center !important;
   animation: birthday-float 1.8s ease-in-out infinite;
 }
 
 .cake-title {
   position: absolute;
-  top: 0;
+  top: -92px !important;
   left: 50%;
   transform: translateX(-50%);
   width: 260px;
@@ -715,14 +594,14 @@ h1.text-primary {
   font-size: 26px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  z-index: 20;
+  z-index: 40 !important;
 }
 
 .cute-cake .cake-plate {
   width: 270px;
   height: 90px;
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 15px;
   background-color: #d8d8d8 !important;
   border-radius: 50%;
@@ -746,24 +625,24 @@ h1.text-primary {
 }
 
 .cake-layer-top {
-  top: 112px;
+  top: 118px;
 }
 
 .cake-layer-middle {
-  top: 145px;
+  top: 151px;
 }
 
 .cake-layer-bottom {
-  top: 178px;
+  top: 184px;
 }
 
 .cute-cake .cake-icing {
   position: absolute;
-  top: 108px;
+  top: 114px;
   left: 30px;
-  background-color: #fff7e8 !important;
   width: 240px;
   height: 85px;
+  background-color: #fff7e8 !important;
   border-radius: 50%;
   z-index: 5;
   box-shadow: inset 0 0 8px rgba(90, 20, 20, 0.12);
@@ -776,8 +655,8 @@ h1.text-primary {
   z-index: 6;
 }
 
-.cute-cake .cake-drip-1 {
-  top: 155px;
+.cake-drip-1 {
+  top: 161px;
   left: 35px;
   width: 42px;
   height: 55px;
@@ -785,16 +664,16 @@ h1.text-primary {
   transform: skewY(12deg);
 }
 
-.cute-cake .cake-drip-2 {
-  top: 157px;
+.cake-drip-2 {
+  top: 163px;
   left: 122px;
   width: 78px;
   height: 62px;
   border-radius: 0 0 40px 40px;
 }
 
-.cute-cake .cake-drip-3 {
-  top: 150px;
+.cake-drip-3 {
+  top: 156px;
   left: 220px;
   width: 50px;
   height: 72px;
@@ -808,8 +687,8 @@ h1.text-primary {
   height: 38px;
   background-color: #7b020b !important;
   border-radius: 8px 8px 4px 4px;
-  z-index: 30;
-  transform: translate(-50%, -100%);
+  z-index: 30 !important;
+  transform: translate(-50%, -72%) !important;
 }
 
 .cake-candle-real::before {
@@ -840,6 +719,54 @@ h1.text-primary {
   animation: cake-flame-flicker 1s ease-in-out alternate infinite;
 }
 
+.birthday-cake-heading {
+  margin: -8px 0 8px !important;
+  font-size: clamp(2.2rem, 4vw, 3.1rem) !important;
+  line-height: 1.1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  white-space: nowrap !important;
+  color: #ffd166 !important;
+  text-align: center !important;
+}
+
+.birthday-cake-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+  margin-top: 10px !important;
+}
+
+.birthday-outline-button,
+.birthday-solid-button {
+  padding: 12px 28px !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  transition: 0.2s ease !important;
+}
+
+.birthday-outline-button {
+  border: 1px solid rgba(255, 247, 232, 0.75) !important;
+  background: transparent !important;
+  color: #fff7e8 !important;
+}
+
+.birthday-solid-button {
+  border: 1px solid rgba(255, 247, 232, 0.18) !important;
+  background: #9f1d23 !important;
+  color: #fff7e8 !important;
+}
+
+.birthday-outline-button:hover,
+.birthday-solid-button:hover {
+  background: #fff7e8 !important;
+  color: #000000 !important;
+}
+
 @keyframes cake-flame-flicker {
   0% {
     transform: skewX(5deg) scale(1);
@@ -860,195 +787,4 @@ h1.text-primary {
   100% {
     transform: skewX(5deg) scale(1);
   }
-}
-
-.birthday-cake-stage {
-  min-height: 520px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  gap: 18px !important;
-  padding-top: 10px !important;
-}
-
-.cute-cake {
-  width: 300px !important;
-  height: 300px !important;
-  margin: 0 auto 10px !important;
-  transform: scale(0.9);
-  transform-origin: center top;
-}
-
-.birthday-cake-stage > .cute-cake + button {
-  margin-top: 18px !important;
-}
-
-.birthday-cake-stage button {
-  position: relative !important;
-  z-index: 20 !important;
-}
-
-.birthday-cake-stage + h1,
-.birthday-cake-stage ~ h1,
-.birthday-cake-stage ~ p {
-  margin-top: 12px !important;
-}
-
-.cute-cake .cake-title {
-  top: -20px !important;
-}
-
-.cute-cake .cake-plate {
-  bottom: 10px !important;
-}
-
-.cute-cake .cake-layer-top {
-  top: 118px !important;
-}
-
-.cute-cake .cake-layer-middle {
-  top: 151px !important;
-}
-
-.cute-cake .cake-layer-bottom {
-  top: 184px !important;
-}
-
-.cute-cake .cake-icing {
-  top: 114px !important;
-}
-
-.cute-cake .cake-drip-1 {
-  top: 161px !important;
-}
-
-.cute-cake .cake-drip-2 {
-  top: 163px !important;
-}
-
-.cute-cake .cake-drip-3 {
-  top: 156px !important;
-}
-
-.birthday-cake-scene {
-  min-height: 100vh !important;
-  width: 100% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 80px 16px 48px !important;
-}
-
-.birthday-cake-stage {
-  min-height: auto !important;
-  width: 100% !important;
-  max-width: 520px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 18px !important;
-}
-
-.birthday-cake-stage .cute-cake {
-  width: 300px !important;
-  height: 300px !important;
-  margin: 0 auto !important;
-  transform: scale(0.9) !important;
-  transform-origin: center center !important;
-}
-
-.birthday-cake-stage .cake-title {
-  top: 0 !important;
-}
-
-.birthday-cake-heading {
-  margin-top: 8px !important;
-  margin-bottom: 0 !important;
-  font-size: clamp(2.3rem, 5vw, 3.8rem) !important;
-  line-height: 1 !important;
-  color: #ffd166 !important;
-  text-align: center !important;
-}
-
-.birthday-cake-actions {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 14px !important;
-  flex-wrap: wrap !important;
-  margin-top: 4px !important;
-}
-
-.birthday-outline-button {
-  padding: 12px 26px !important;
-  border-radius: 999px !important;
-  border: 1px solid rgba(255, 247, 232, 0.75) !important;
-  background: transparent !important;
-  color: #fff7e8 !important;
-  font-weight: 800 !important;
-  box-shadow: 0 0 24px rgba(255, 247, 232, 0.08) !important;
-  transition: 0.2s ease !important;
-}
-
-.birthday-outline-button:hover {
-  background: #fff7e8 !important;
-  color: #000000 !important;
-}
-
-.birthday-solid-button {
-  padding: 12px 30px !important;
-  border-radius: 999px !important;
-  border: 1px solid rgba(255, 247, 232, 0.18) !important;
-  background: #9f1d23 !important;
-  color: #fff7e8 !important;
-  font-weight: 800 !important;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28) !important;
-  transition: 0.2s ease !important;
-}
-
-.birthday-solid-button:hover {
-  background: #fff7e8 !important;
-  color: #000000 !important;
-}
-
-.birthday-cake-stage .cake-title {
-  top: -70px !important;
-  z-index: 40 !important;
-}
-
-.birthday-cake-stage .cake-candle-real {
-  z-index: 30 !important;
-}
-
-.birthday-cake-stage .cute-cake {
-  margin-top: 34px !important;
-  margin-bottom: 8px !important;
-  transform: scale(0.82) !important;
-}
-
-.birthday-cake-heading {
-  margin-top: -8px !important;
-  margin-bottom: 8px !important;
-  font-size: clamp(2.2rem, 4vw, 3.1rem) !important;
-  line-height: 1.1 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 12px !important;
-  white-space: nowrap !important;
-}
-
-.birthday-cake-actions {
-  margin-top: 10px !important;
-  gap: 16px !important;
-}
-
-.birthday-cake-stage .cake-title {
-  top: -72px !important;
-}
-
-.birthday-cake-stage .cake-candle-real {
-  transform: translate(-50%, -72%) !important;
 }
