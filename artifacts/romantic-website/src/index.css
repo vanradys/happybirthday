@@ -1012,3 +1012,12 @@ h1.text-primary {
   background: #fff7e8 !important;
   color: #000000 !important;
 }
+
+.birthday-cake-stage .cake-title {
+  top: -48px !important;
+  z-index: 40 !important;
+}
+
+.birthday-cake-stage .cake-candle-real {
+  z-index: 30 !important;
+}
