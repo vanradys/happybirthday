@@ -67,14 +67,34 @@ export default function BirthdayIntroOverlay() {
             </div>
 
             <h1 className="mb-8 font-serif text-3xl leading-tight text-[#ffd166] sm:text-4xl birthday-intro-glow">
-              POV: One night,
+              POV: One day,
               <br />
-              one laptop,
+              one moment,
               <br />
               one birthday surprise.
             </h1>
 
-            <div className="mx-auto mb-5 text-7xl birthday-cake-float">🎂</div>
+            <div className="mx-auto mb-6">
+              <div className="birthday-css-cake" aria-label="Birthday cake">
+              <span className="cake-candle">
+                <span className="cake-flame" />
+              </span>
+              <span className="cake-top">
+                <span className="cake-sprinkle sprinkle-1" />
+                <span className="cake-sprinkle sprinkle-2" />
+                <span className="cake-sprinkle sprinkle-3" />
+                <span className="cake-sprinkle sprinkle-4" />
+              </span>
+              <span className="cake-body">
+                <span className="cake-face">
+                  <span className="cake-eye" />
+                  <span className="cake-smile" />
+                  <span className="cake-eye" />
+                </span>
+              </span>
+              <span className="cake-plate" />
+              </div>
+</div>
 
             <p className="mb-4 text-sm text-white/75">
               Loading your birthday surprise...
@@ -97,25 +117,60 @@ export default function BirthdayIntroOverlay() {
               <button
                 type="button"
                 onClick={() => setPhase("wish")}
-                className="text-8xl birthday-cake-float hover:scale-110 transition"
+                className="birthday-css-cake hover:scale-110 transition"
                 aria-label="Make a wish"
               >
-                🎂
+                <span className="cake-candle">
+                  <span className="cake-flame" />
+                </span>
+                <span className="cake-top">
+                  <span className="cake-sprinkle sprinkle-1" />
+                  <span className="cake-sprinkle sprinkle-2" />
+                  <span className="cake-sprinkle sprinkle-3" />
+                  <span className="cake-sprinkle sprinkle-4" />
+                </span>
+                <span className="cake-body">
+                  <span className="cake-face">
+                    <span className="cake-eye" />
+                    <span className="cake-smile" />
+                    <span className="cake-eye" />
+                  </span>
+                </span>
+                <span className="cake-plate" />
               </button>
             </div>
 
             <h2 className="mb-2 font-serif text-3xl text-[#ffd166] birthday-intro-glow">
-              Make a Wish ✨
+              Make a Wish 𓇼
+
             </h2>
             <p className="mb-6 text-sm text-white/70">
-              Klik kuenya buat lanjut
+              Klik kuenya buat lanjut ♡
             </p>
           </div>
         )}
 
         {phase === "wish" && (
           <div className="birthday-intro-pop">
-            <div className="mx-auto mb-5 text-8xl birthday-cake-float">🎂</div>
+            <div className="mx-auto mb-5 birthday-css-cake">
+              <span className="cake-candle">
+                <span className="cake-flame" />
+              </span>
+              <span className="cake-top">
+                <span className="cake-sprinkle sprinkle-1" />
+                <span className="cake-sprinkle sprinkle-2" />
+                <span className="cake-sprinkle sprinkle-3" />
+                <span className="cake-sprinkle sprinkle-4" />
+              </span>
+              <span className="cake-body">
+                <span className="cake-face">
+                  <span className="cake-eye" />
+                  <span className="cake-smile" />
+                  <span className="cake-eye" />
+                </span>
+              </span>
+              <span className="cake-plate" />
+            </div>
             <h2 className="mb-3 font-serif text-3xl text-[#ffd166] birthday-intro-glow">
               Happy Birthday!
             </h2>
@@ -127,7 +182,7 @@ export default function BirthdayIntroOverlay() {
               onClick={() => setPhase("envelope")}
               className="rounded-full bg-[#ffd166] px-7 py-3 font-bold text-[#5a1414] shadow-lg hover:scale-105 transition"
             >
-              Open Letter 💌
+              Open Letter ✉︎
             </button>
           </div>
         )}
@@ -146,7 +201,7 @@ export default function BirthdayIntroOverlay() {
               onClick={() => setShowIntro(false)}
               className="rounded-full bg-[#8b1e1e] px-7 py-3 font-bold text-white shadow-lg hover:scale-105 transition"
             >
-              Continue 💗
+              Continue ❤︎
             </button>
           </div>
         )}
