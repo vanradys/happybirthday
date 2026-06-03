@@ -685,78 +685,76 @@ h1.text-primary {
   color: #000000 !important;
 }
 
-body::before {
+.ending-twinkle-stars::before {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
   background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.95) 1px, transparent 1.5px),
-    radial-gradient(circle, rgba(255, 209, 102, 0.75) 1px, transparent 1.5px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.55) 1.5px, transparent 2px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.35) 1px, transparent 1.5px);
+    radial-gradient(circle, rgba(255, 255, 255, 0.95) 1px, transparent 1.6px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.65) 1.2px, transparent 1.8px),
+    radial-gradient(circle, rgba(255, 209, 102, 0.75) 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.35) 1px, transparent 1.6px);
   background-size:
-    90px 90px,
-    130px 130px,
-    180px 180px,
-    240px 240px;
+    74px 74px,
+    113px 113px,
+    151px 151px,
+    211px 211px;
   background-position:
     12px 18px,
-    44px 72px,
-    92px 40px,
-    140px 110px;
-  animation: star-field-drift 28s linear infinite;
+    48px 64px,
+    88px 32px,
+    144px 106px;
+  animation: ending-stars-twinkle 2.8s ease-in-out infinite alternate;
 }
 
-body::after {
-  content: "✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦";
-  position: fixed;
+.ending-twinkle-stars::after {
+  content: "✦  ✧  ✦  ✧  ✦  ✧";
+  position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  color: rgba(255, 255, 255, 0.38);
-  font-size: 14px;
-  letter-spacing: 95px;
-  line-height: 120px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
-  animation: star-symbol-float 16s linear infinite;
+  color: rgba(255, 255, 255, 0.32);
+  font-size: 18px;
+  letter-spacing: 180px;
+  line-height: 180px;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.45);
+  animation: ending-star-symbol-twinkle 3.5s ease-in-out infinite alternate;
 }
 
-@keyframes star-field-drift {
-  from {
-    background-position:
-      12px 18px,
-      44px 72px,
-      92px 40px,
-      140px 110px;
-  }
-
-  to {
-    background-position:
-      102px 108px,
-      174px 202px,
-      272px 220px,
-      380px 350px;
-  }
+.ending-twinkle-stars > * {
+  position: relative;
+  z-index: 1;
 }
 
-@keyframes star-symbol-float {
+@keyframes ending-stars-twinkle {
   0% {
-    transform: translateY(100vh);
-    opacity: 0;
+    opacity: 0.45;
+    filter: brightness(0.8);
   }
 
-  12% {
+  50% {
     opacity: 1;
-  }
-
-  88% {
-    opacity: 1;
+    filter: brightness(1.35);
   }
 
   100% {
-    transform: translateY(-120vh);
-    opacity: 0;
+    opacity: 0.65;
+    filter: brightness(1);
+  }
+}
+
+@keyframes ending-star-symbol-twinkle {
+  0% {
+    opacity: 0.18;
+  }
+
+  50% {
+    opacity: 0.65;
+  }
+
+  100% {
+    opacity: 0.32;
   }
 }

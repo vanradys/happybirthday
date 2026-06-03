@@ -30,7 +30,7 @@ export default function Ending() {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 via-indigo-950 to-black">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 via-indigo-950 to-black ending-twinkle-stars">
       {stars.map((star) => (
         <div
           key={star.id}
