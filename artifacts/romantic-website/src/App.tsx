@@ -15,6 +15,7 @@ import Achievements from "@/pages/Achievements";
 import Ending from "@/pages/Ending";
 import MusicPlayer from "@/components/MusicPlayer";
 import CursorEffect from "@/components/CursorEffect";
+import BirthdayIntroOverlay from "@/components/BirthdayIntroOverlay";
 import { config } from "@/config";
 
 const queryClient = new QueryClient();
@@ -129,6 +130,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <BirthdayIntroOverlay />
+
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
           <CursorEffect />
           <Router />

@@ -1,0 +1,157 @@
+import { useEffect, useMemo, useState } from "react";
+
+export default function BirthdayIntroOverlay() {
+  const shouldShowOnThisPage = useMemo(() => {
+    if (typeof window === "undefined") return false;
+
+    const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+    const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+
+    return currentPath === "/" || (basePath !== "" && currentPath === basePath);
+  }, []);
+
+  const [showIntro, setShowIntro] = useState(shouldShowOnThisPage);
+  const [progress, setProgress] = useState(0);
+  const [phase, setPhase] = useState<"loading" | "cake" | "wish" | "envelope">("loading");
+
+  useEffect(() => {
+    if (!showIntro || phase !== "loading") return;
+
+    const timer = window.setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          window.clearInterval(timer);
+          window.setTimeout(() => setPhase("cake"), 500);
+          return 100;
+        }
+
+        return prev + 2;
+      });
+    }, 55);
+
+    return () => window.clearInterval(timer);
+  }, [phase, showIntro]);
+
+  useEffect(() => {
+    if (!showIntro) return;
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setShowIntro(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [showIntro]);
+
+  if (!showIntro) return null;
+
+  return (
+    <div className="fixed inset-0 z-[9999] bg-[#080202] text-white flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(170,32,32,0.48),transparent_58%)]" />
+      <div className="absolute inset-0 opacity-25 birthday-intro-stars" />
+
+      <button
+        type="button"
+        onClick={() => setShowIntro(false)}
+        className="absolute right-5 top-5 z-20 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs text-white/80 backdrop-blur hover:bg-white/20 transition"
+      >
+        Skip
+      </button>
+
+      <div className="relative z-10 w-full max-w-md px-6 text-center">
+        {phase === "loading" && (
+          <div className="birthday-intro-fade-in">
+            <div className="mb-6 text-sm font-semibold tracking-[0.35em] text-white/70">
+              BIRTHDAY SURPRISE
+            </div>
+
+            <h1 className="mb-8 font-serif text-3xl leading-tight text-[#ffd166] sm:text-4xl birthday-intro-glow">
+              POV: One night,
+              <br />
+              one laptop,
+              <br />
+              one birthday surprise.
+            </h1>
+
+            <div className="mx-auto mb-5 text-7xl birthday-cake-float">🎂</div>
+
+            <p className="mb-4 text-sm text-white/75">
+              Loading your birthday surprise...
+            </p>
+
+            <div className="mx-auto h-3 w-72 overflow-hidden rounded-full bg-white/20">
+              <div
+                className="h-full rounded-full bg-[#ffd166] transition-all duration-100"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+          </div>
+        )}
+
+        {phase === "cake" && (
+          <div className="birthday-intro-pop">
+            <div className="relative mx-auto mb-7 flex h-48 w-48 items-center justify-center">
+              <div className="birthday-firework birthday-firework-left" />
+              <div className="birthday-firework birthday-firework-right" />
+              <button
+                type="button"
+                onClick={() => setPhase("wish")}
+                className="text-8xl birthday-cake-float hover:scale-110 transition"
+                aria-label="Make a wish"
+              >
+                🎂
+              </button>
+            </div>
+
+            <h2 className="mb-2 font-serif text-3xl text-[#ffd166] birthday-intro-glow">
+              Make a Wish ✨
+            </h2>
+            <p className="mb-6 text-sm text-white/70">
+              Klik kuenya buat lanjut
+            </p>
+          </div>
+        )}
+
+        {phase === "wish" && (
+          <div className="birthday-intro-pop">
+            <div className="mx-auto mb-5 text-8xl birthday-cake-float">🎂</div>
+            <h2 className="mb-3 font-serif text-3xl text-[#ffd166] birthday-intro-glow">
+              Happy Birthday!
+            </h2>
+            <p className="mb-7 text-sm text-white/75">
+              Ada surat kecil yang aku siapin buat kamu.
+            </p>
+            <button
+              type="button"
+              onClick={() => setPhase("envelope")}
+              className="rounded-full bg-[#ffd166] px-7 py-3 font-bold text-[#5a1414] shadow-lg hover:scale-105 transition"
+            >
+              Open Letter 💌
+            </button>
+          </div>
+        )}
+
+        {phase === "envelope" && (
+          <div className="birthday-intro-pop rounded-3xl border border-white/10 bg-[#fff8ec] p-8 text-[#5a1414] shadow-2xl">
+            <div className="mb-4 text-8xl birthday-envelope-float">💌</div>
+            <h2 className="mb-3 font-serif text-3xl font-bold">
+              Surprise is ready
+            </h2>
+            <p className="mb-7 text-sm text-[#5a1414]/70">
+              Sekarang lanjut ke halaman utamanya ya.
+            </p>
+            <button
+              type="button"
+              onClick={() => setShowIntro(false)}
+              className="rounded-full bg-[#8b1e1e] px-7 py-3 font-bold text-white shadow-lg hover:scale-105 transition"
+            >
+              Continue 💗
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

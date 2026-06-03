@@ -240,3 +240,120 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 0 0 20px rgba(0,0,0,0.02);
 }
+
+/* Birthday intro overlay animations */
+.birthday-intro-stars {
+  background-image:
+    radial-gradient(circle, rgba(255, 209, 102, 0.7) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.45) 1px, transparent 1.5px);
+  background-position: 0 0, 28px 34px;
+  background-size: 72px 72px;
+  animation: birthday-stars-drift 9s linear infinite;
+}
+
+.birthday-intro-fade-in {
+  animation: birthday-fade-in 0.7s ease-out both;
+}
+
+.birthday-intro-pop {
+  animation: birthday-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.birthday-intro-glow {
+  text-shadow: 0 0 16px rgba(255, 209, 102, 0.35);
+}
+
+.birthday-cake-float,
+.birthday-envelope-float {
+  animation: birthday-float 1.6s ease-in-out infinite;
+}
+
+.birthday-firework {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #ffd166;
+  box-shadow:
+    0 -42px #ffd166,
+    30px -30px #ffafcc,
+    42px 0 #bde0fe,
+    30px 30px #caffbf,
+    0 42px #fdffb6,
+    -30px 30px #ffc6ff,
+    -42px 0 #9bf6ff,
+    -30px -30px #ffadad;
+  animation: birthday-firework-explode 1.45s ease-out infinite;
+}
+
+.birthday-firework-left {
+  left: -10px;
+  top: 28px;
+}
+
+.birthday-firework-right {
+  right: -12px;
+  top: 58px;
+  animation-delay: 0.65s;
+}
+
+@keyframes birthday-stars-drift {
+  from {
+    background-position: 0 0, 28px 34px;
+  }
+
+  to {
+    background-position: 72px 72px, 100px 106px;
+  }
+}
+
+@keyframes birthday-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes birthday-pop {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes birthday-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes birthday-firework-explode {
+  0% {
+    opacity: 0;
+    transform: scale(0.25);
+  }
+
+  45% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
