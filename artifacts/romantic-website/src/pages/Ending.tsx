@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { Heart } from "lucide-react";
 import { config } from "@/config";
 
 interface Star {
@@ -11,9 +12,35 @@ interface Star {
   delay: string;
 }
 
+interface FloatingHeart {
+  id: number;
+  left: string;
+  top: string;
+  size: number;
+  duration: string;
+  delay: string;
+  rotate: number;
+}
+
 export default function Ending() {
   const [stars, setStars] = useState<Star[]>([]);
   const [textVisible, setTextVisible] = useState(false);
+  const [isAccepted, setIsAccepted] = useState(false);
+  const [noBtnPosition, setNoBtnPosition] = useState<CSSProperties>({});
+
+  const floatingHearts = useMemo<FloatingHeart[]>(
+    () =>
+      Array.from({ length: 22 }, (_, i) => ({
+        id: i,
+        left: Math.random() * 100 + "%",
+        top: Math.random() * 100 + "%",
+        size: Math.random() * 28 + 18,
+        duration: Math.random() * 8 + 8 + "s",
+        delay: Math.random() * 4 + "s",
+        rotate: Math.random() * 40 - 20,
+      })),
+    []
+  );
 
   useEffect(() => {
     const generated: Star[] = Array.from({ length: 80 }, (_, i) => ({
@@ -25,9 +52,109 @@ export default function Ending() {
       duration: Math.random() * 3 + 2 + "s",
       delay: Math.random() * 4 + "s",
     }));
+
     setStars(generated);
-    setTimeout(() => setTextVisible(true), 300);
+
+    const timer = window.setTimeout(() => {
+      setTextVisible(true);
+    }, 300);
+
+    return () => window.clearTimeout(timer);
   }, []);
+
+  const moveNoButton = () => {
+    const buttonWidth = 120;
+    const buttonHeight = 60;
+    const padding = 24;
+
+    const maxLeft = Math.max(
+      padding,
+      window.innerWidth - buttonWidth - padding
+    );
+
+    const maxTop = Math.max(
+      padding,
+      window.innerHeight - buttonHeight - padding
+    );
+
+    const newLeft = Math.random() * (maxLeft - padding) + padding;
+    const newTop = Math.random() * (maxTop - padding) + padding;
+    const randomRotate = Math.random() * 24 - 12;
+
+    setNoBtnPosition({
+      position: "fixed",
+      left: `${newLeft}px`,
+      top: `${newTop}px`,
+      zIndex: 9999,
+      transform: `rotate(${randomRotate}deg)`,
+      transition: "all 180ms ease",
+    });
+  };
+
+  if (!isAccepted) {
+    return (
+      <div className="relative min-h-screen overflow-hidden bg-[#fff3fa]">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {floatingHearts.map((heart) => (
+            <Heart
+              key={heart.id}
+              className="absolute text-pink-200 opacity-60 animate-pulse"
+              fill="currentColor"
+              style={{
+                left: heart.left,
+                top: heart.top,
+                width: `${heart.size}px`,
+                height: `${heart.size}px`,
+                transform: `rotate(${heart.rotate}deg)`,
+                animationDuration: heart.duration,
+                animationDelay: heart.delay,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center">
+          <Heart
+            className="mb-14 h-24 w-24 text-red-500 drop-shadow-lg"
+            fill="currentColor"
+          />
+
+          <h1 className="mb-14 text-5xl font-extrabold tracking-tight text-pink-600 drop-shadow-sm sm:text-7xl">
+            Do you love me?
+          </h1>
+
+          <div className="relative flex h-28 items-center justify-center gap-8 sm:gap-12">
+            <button
+              type="button"
+              onClick={() => setIsAccepted(true)}
+              className="rounded-full bg-green-500 px-12 py-4 text-xl font-black text-white shadow-xl transition hover:scale-110 hover:bg-green-600 active:scale-95"
+            >
+              YES
+            </button>
+
+            <button
+              type="button"
+              style={noBtnPosition}
+              onMouseEnter={moveNoButton}
+              onMouseMove={moveNoButton}
+              onFocus={moveNoButton}
+              onTouchStart={(event) => {
+                event.preventDefault();
+                moveNoButton();
+              }}
+              onClick={(event) => {
+                event.preventDefault();
+                moveNoButton();
+              }}
+              className="rounded-full bg-red-500 px-12 py-4 text-xl font-black text-white shadow-xl transition active:scale-90"
+            >
+              NO
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 via-indigo-950 to-black">
@@ -59,6 +186,7 @@ export default function Ending() {
         >
           "Aku suka dunia yang kita bikin berdua."
         </p>
+
         <p
           className="text-lg sm:text-xl font-serif text-rose-200 leading-relaxed mb-12"
           style={{ textShadow: "0 0 20px rgba(255,100,150,0.3)" }}
