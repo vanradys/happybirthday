@@ -685,3 +685,138 @@ h1.text-primary {
   color: #000000 !important;
 }
 
+.birthday-css-cake {
+  position: relative !important;
+  display: block !important;
+  width: 180px !important;
+  height: 170px !important;
+  margin: 0 auto 28px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  cursor: pointer;
+  overflow: visible !important;
+  color: initial !important;
+  animation: birthday-cake-bounce 1.6s ease-in-out infinite;
+}
+
+.birthday-css-cake *,
+.birthday-css-cake span {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  color: initial !important;
+}
+
+.birthday-css-cake .cake-plate {
+  left: 24px;
+  bottom: 8px;
+  width: 132px;
+  height: 26px;
+  background: #fff7e8 !important;
+  border: 6px solid #050303 !important;
+  border-radius: 999px;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.18);
+}
+
+.birthday-css-cake .cake-body {
+  left: 32px;
+  bottom: 24px;
+  width: 116px;
+  height: 74px;
+  background: linear-gradient(180deg, #d9a05f 0%, #b8753a 100%) !important;
+  border: 7px solid #050303 !important;
+  border-radius: 12px 12px 28px 28px;
+  overflow: hidden;
+}
+
+.birthday-css-cake .cake-top {
+  left: 22px;
+  bottom: 82px;
+  width: 136px;
+  height: 58px;
+  background: #5b2b1f !important;
+  border: 7px solid #050303 !important;
+  border-radius: 50% 50% 22px 22px;
+  overflow: hidden;
+}
+
+.birthday-css-cake .cake-candle {
+  left: 82px;
+  bottom: 126px;
+  width: 16px;
+  height: 50px;
+  background: linear-gradient(90deg, #4cc9f0 0 35%, #90e0ef 35% 65%, #4cc9f0 65%) !important;
+  border: 5px solid #050303 !important;
+  border-radius: 999px;
+  z-index: 5;
+}
+
+.birthday-css-cake .cake-flame {
+  left: 50%;
+  top: -24px;
+  width: 18px;
+  height: 26px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #ffef6e, #ff6b35) !important;
+  border: 5px solid #050303 !important;
+  border-radius: 50%;
+  animation: cake-flame-wiggle 0.55s ease-in-out infinite alternate;
+}
+
+.birthday-css-cake .cake-face {
+  left: 27px;
+  top: 27px;
+  display: flex !important;
+  align-items: center;
+  gap: 13px;
+  position: absolute;
+}
+
+.birthday-css-cake .cake-eye {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background: #050303 !important;
+  border-radius: 999px;
+}
+
+.birthday-css-cake .cake-smile {
+  position: relative;
+  width: 22px;
+  height: 12px;
+  border-bottom: 5px solid #050303 !important;
+  border-radius: 0 0 999px 999px;
+}
+
+.birthday-css-cake .cake-sprinkle {
+  width: 8px;
+  height: 22px;
+  border-radius: 999px;
+  transform: rotate(45deg);
+  z-index: 3;
+}
+
+.birthday-css-cake .sprinkle-1 {
+  left: 26px;
+  top: 20px;
+  background: #ff7eb6 !important;
+}
+
+.birthday-css-cake .sprinkle-2 {
+  left: 58px;
+  top: 12px;
+  background: #ffd166 !important;
+}
+
+.birthday-css-cake .sprinkle-3 {
+  right: 34px;
+  top: 18px;
+  background: #4cc9f0 !important;
+}
+
+.birthday-css-cake .sprinkle-4 {
+  right: 56px;
+  top: 34px;
+  background: #caffbf !important;
+}
