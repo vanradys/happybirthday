@@ -170,7 +170,7 @@ export default function BirthdayIntroOverlay() {
               </div>
 
               <h1 className="birthday-cake-heading">
-                Make a Wish 𓇼
+                Make a Wish𓇼
               </h1>
 
               <div className="birthday-cake-actions">
