@@ -440,3 +440,60 @@ body {
 .bg-pink-700 {
   background-color: #9f1d23 !important;
 }
+
+.bg-white,
+.bg-card,
+[class*="bg-[#fff"],
+[class*="bg-[#FFF"] {
+  color: #2b0808 !important;
+}
+
+.bg-white h1,
+.bg-white h2,
+.bg-white h3,
+.bg-white p,
+.bg-white span,
+.bg-white label,
+.bg-card h1,
+.bg-card h2,
+.bg-card h3,
+.bg-card p,
+.bg-card span,
+.bg-card label {
+  color: #2b0808 !important;
+}
+
+.bg-white .text-muted-foreground,
+.bg-card .text-muted-foreground {
+  color: rgba(43, 8, 8, 0.65) !important;
+}
+
+.bg-white .text-primary,
+.bg-card .text-primary {
+  color: #9f1d23 !important;
+}
+
+.bg-white button,
+.bg-card button {
+  background-color: #9f1d23 !important;
+  color: #fff7e8 !important;
+}
+
+.bg-white button:hover,
+.bg-card button:hover {
+  background-color: #ffd166 !important;
+  color: #2b0808 !important;
+}
+
+input,
+textarea,
+select {
+  background-color: #090303 !important;
+  color: #fff7e8 !important;
+  border-color: rgba(255, 247, 232, 0.45) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 247, 232, 0.62) !important;
+}
