@@ -93,12 +93,12 @@ export default function Ending() {
 
   if (!isAccepted) {
     return (
-      <div className="relative min-h-screen overflow-hidden bg-[#fff3fa]">
+      <div className="relative min-h-screen overflow-hidden bg-background">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {floatingHearts.map((heart) => (
             <Heart
               key={heart.id}
-              className="absolute text-pink-200 opacity-60 animate-pulse"
+              className="absolute text-white/35 opacity-60 animate-pulse"
               fill="currentColor"
               style={{
                 left: heart.left,
@@ -115,11 +115,11 @@ export default function Ending() {
 
         <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center">
           <Heart
-            className="mb-14 h-24 w-24 text-red-500 drop-shadow-lg"
+            className="mb-14 h-24 w-24 text-[#9f1d23] drop-shadow-lg"
             fill="currentColor"
           />
 
-          <h1 className="mb-14 text-5xl font-extrabold tracking-tight text-pink-600 drop-shadow-sm sm:text-7xl">
+          <h1 className="mb-14 text-5xl font-extrabold tracking-tight text-[#fff7e8] drop-shadow-sm sm:text-7xl">
             Do you love me?
           </h1>
 
@@ -127,7 +127,7 @@ export default function Ending() {
             <button
               type="button"
               onClick={() => setIsAccepted(true)}
-              className="rounded-full bg-green-500 px-12 py-4 text-xl font-black text-white shadow-xl transition hover:scale-110 hover:bg-green-600 active:scale-95"
+              className="rounded-full bg-[#fff7e8] px-12 py-4 text-xl font-black text-[#4b1515] shadow-xl transition hover:scale-110 hover:bg-[#ffd166] active:scale-95"
             >
               YES
             </button>
@@ -146,7 +146,7 @@ export default function Ending() {
                 event.preventDefault();
                 moveNoButton();
               }}
-              className="rounded-full bg-red-500 px-12 py-4 text-xl font-black text-white shadow-xl transition active:scale-90"
+              className="rounded-full bg-[#9f1d23] px-12 py-4 text-xl font-black text-[#fff7e8] shadow-xl transition hover:bg-[#7f151b] active:scale-90"
             >
               NO
             </button>

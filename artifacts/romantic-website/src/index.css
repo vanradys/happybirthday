@@ -398,6 +398,12 @@ body,
   background-color: #fff7e8 !important;
   color: #2b0808 !important;
 }
+.bg-white,
+.bg-card,
+.paper-texture {
+  background: #fff7e8 !important;
+  color: #4b1515 !important;
+}
 
 .bg-white *,
 .bg-card *,
@@ -405,17 +411,39 @@ body,
 .paper-texture h1,
 .paper-texture h2,
 .paper-texture h3,
+.paper-texture .font-serif {
+  color: #4b1515 !important;
+}
+
 .paper-texture p,
 .paper-texture span,
-.paper-texture div {
-  color: #2b0808 !important;
+.paper-texture div,
+.bg-white p,
+.bg-white span,
+.bg-white div,
+.bg-card p,
+.bg-card span,
+.bg-card div {
+  color: #8a6262 !important;
 }
 
 .paper-texture button,
 .paper-texture button *,
 .bg-white button,
-.bg-card button {
+.bg-white button *,
+.bg-card button,
+.bg-card button * {
   background-color: #9f1d23 !important;
+  color: #fff7e8 !important;
+}
+
+.paper-texture button:hover,
+.paper-texture button:hover *,
+.bg-white button:hover,
+.bg-white button:hover *,
+.bg-card button:hover,
+.bg-card button:hover * {
+  background-color: #7f151b !important;
   color: #fff7e8 !important;
 }
 
@@ -787,4 +815,28 @@ body::after {
   100% {
     transform: skewX(5deg) scale(1);
   }
+}
+
+.bg-white h1,
+.bg-card h1,
+.paper-texture h1,
+.bg-white h2,
+.bg-card h2,
+.paper-texture h2 {
+  color: #4b1515 !important;
+}
+
+.bg-white .rounded-xl,
+.bg-white .rounded-2xl,
+.bg-card .rounded-xl,
+.bg-card .rounded-2xl {
+  background-color: #fff7e8 !important;
+  color: #4b1515 !important;
+}
+
+.bg-white .rounded-xl *,
+.bg-white .rounded-2xl *,
+.bg-card .rounded-xl *,
+.bg-card .rounded-2xl * {
+  color: #4b1515 !important;
 }
