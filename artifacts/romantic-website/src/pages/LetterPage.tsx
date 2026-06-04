@@ -45,7 +45,7 @@ export default function LetterPage({ letter }: LetterProps) {
                 }}
                 className="px-7 py-3 bg-primary text-white rounded-full font-semibold hover:opacity-90 transition-opacity shadow-md"
               >
-                Buka Pelan-Pelan 💌
+                Klik nya yang sabar ya 💌
               </button>
             </div>
           ) : (
