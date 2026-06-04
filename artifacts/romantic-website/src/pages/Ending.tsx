@@ -103,6 +103,30 @@ export default function Ending() {
     });
   };
 
+  if (showLoveMore) {
+  return (
+    <div className="love-more-page">
+      <div className="love-more-heart">
+        {Array.from({ length: 90 }).map((_, index) => (
+          <div
+            className="love-more-item"
+            key={index}
+            style={{ "--i": index + 1 } as CSSProperties}
+          >
+            <div className="love-more-horizontal">
+              <div className="love-more-vertical">
+                <div className="love-more-word">I Love You</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h1 className="love-more-title">LOVE YOU MORE SAYANGG</h1>
+    </div>
+  );
+}
+
   if (!isAccepted) {
     return (
       <div className="relative min-h-screen overflow-hidden bg-background">
@@ -168,29 +192,7 @@ export default function Ending() {
     );
   }
 
-  if (showLoveMore) {
-  return (
-    <div className="love-more-page">
-      <div className="love-more-heart">
-        {Array.from({ length: 90 }).map((_, index) => (
-          <div
-            className="love-more-item"
-            key={index}
-            style={{ "--i": index + 1 } as CSSProperties}
-          >
-            <div className="love-more-horizontal">
-              <div className="love-more-vertical">
-                <div className="love-more-word">I Love You</div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
 
-      <h1 className="love-more-title">LOVE YOU MORE SAYANGG</h1>
-    </div>
-  );
-}
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 via-indigo-950 to-black">
