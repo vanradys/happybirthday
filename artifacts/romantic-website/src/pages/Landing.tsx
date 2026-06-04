@@ -109,7 +109,7 @@ export default function Landing() {
                 .map((paragraph, index) => (
                   <p
                     key={index}
-                    className="animate-[fadeIn_0.35s_ease] rounded-2xl bg-[#fff1f1] px-5 py-4 font-serif text-base leading-relaxed text-[#4b1515] shadow-sm"
+                    className="animate-[fadeIn_0.35s_ease] rounded-2xl bg-[#fff7e8] border border-[#ead7bd] px-5 py-4 font-serif text-base leading-relaxed text-[#4b1515] shadow-sm"
                   >
                     {paragraph}
                   </p>
