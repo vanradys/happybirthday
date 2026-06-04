@@ -202,7 +202,7 @@ export default function Ending() {
   return (
     <div className="love-more-page">
         <FloatingHeartCanvas />
-        
+
       <div className="love-more-heart">
         {Array.from({ length: 90 }).map((_, index) => (
           <div
@@ -309,8 +309,8 @@ export default function Ending() {
       ))}
 
       <div
-        className={`relative z-10 text-center px-6 max-w-lg mx-auto transition-all duration-1000 ${
-          textVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        className={`relative z-10 text-center px-6 max-w-lg mx-auto ${
+              textVisible ? "ending-text-pop" : "ending-text-hidden"
         }`}
       >
         <div className="text-5xl mb-8">🌠</div>
