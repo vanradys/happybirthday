@@ -26,6 +26,7 @@ export default function Ending() {
   const [stars, setStars] = useState<Star[]>([]);
   const [textVisible, setTextVisible] = useState(false);
   const [isAccepted, setIsAccepted] = useState(false);
+  const [showLoveMore, setShowLoveMore] = useState(false);
   const [noBtnPosition, setNoBtnPosition] = useState<CSSProperties>({});
 
   const floatingHearts = useMemo<FloatingHeart[]>(
@@ -61,6 +62,17 @@ export default function Ending() {
 
     return () => window.clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+  if (!showLoveMore) return;
+
+  const timer = window.setTimeout(() => {
+    setShowLoveMore(false);
+    setIsAccepted(true);
+  }, 4500);
+
+  return () => window.clearTimeout(timer);
+}, [showLoveMore]);
 
   const moveNoButton = () => {
     const buttonWidth = 120;
@@ -126,7 +138,7 @@ export default function Ending() {
           <div className="relative flex h-28 items-center justify-center gap-8 sm:gap-12">
             <button
               type="button"
-              onClick={() => setIsAccepted(true)}
+              onClick={() => setShowLoveMore(true)}
               className="rounded-full bg-[#fff7e8] px-12 py-4 text-xl font-black text-[#4b1515] shadow-xl transition hover:scale-110 hover:bg-[#ffd166] active:scale-95"
             >
               SAYANGPOLL
@@ -155,6 +167,30 @@ export default function Ending() {
       </div>
     );
   }
+
+  if (showLoveMore) {
+  return (
+    <div className="love-more-page">
+      <div className="love-more-heart">
+        {Array.from({ length: 90 }).map((_, index) => (
+          <div
+            className="love-more-item"
+            key={index}
+            style={{ "--i": index + 1 } as CSSProperties}
+          >
+            <div className="love-more-horizontal">
+              <div className="love-more-vertical">
+                <div className="love-more-word">I Love You</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h1 className="love-more-title">LOVE YOU MORE SAYANGG</h1>
+    </div>
+  );
+}
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 via-indigo-950 to-black">
