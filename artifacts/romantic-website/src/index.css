@@ -857,9 +857,37 @@ body::after {
   overflow: hidden;
   position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  padding-bottom: 90px;
+  padding-bottom: 0;
+}
+
+.love-more-page::before,
+.love-more-page::after {
+  content: "❤︎ ❤︎ ❤︎ ❤︎ ❤︎ ❤︎ ❤︎ ❤︎ ❤︎ ❤︎ ❤︎ ❤︎ ❤︎ ❤︎ ❤︎ ❤︎ ❤︎ ❤︎";
+  position: absolute;
+  left: -10%;
+  bottom: -20%;
+  width: 120%;
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 24px;
+  letter-spacing: 54px;
+  line-height: 90px;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.45);
+  animation: love-more-floating-hearts 14s linear infinite;
+  z-index: 1;
+}
+
+.love-more-page::after {
+  left: -5%;
+  bottom: -35%;
+  color: rgba(255, 255, 255, 0.28);
+  font-size: 18px;
+  letter-spacing: 72px;
+  line-height: 110px;
+  animation-duration: 19s;
+  animation-delay: 4s;
 }
 
 .love-more-heart {
@@ -926,4 +954,29 @@ body::after {
   50% { transform: translateY(180px); }
   75% { transform: translateY(450px); }
   100% { transform: translateY(180px); }
+}
+
+@keyframes love-more-floating-hearts {
+  0% {
+    transform: translateY(110vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(20vh) translateX(45px) rotate(180deg);
+    opacity: 0.9;
+  }
+
+  90% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-130vh) translateX(-35px) rotate(360deg);
+    opacity: 0;
+  }
 }
