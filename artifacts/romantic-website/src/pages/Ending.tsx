@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState, type CSSProperties } from "react";
+
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { Heart } from "lucide-react";
 import { config } from "@/config";
 
@@ -20,6 +21,100 @@ interface FloatingHeart {
   duration: string;
   delay: string;
   rotate: number;
+}
+
+function FloatingHeartCanvas() {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    type HeartParticle = {
+      x: number;
+      y: number;
+      size: number;
+      speed: number;
+      drift: number;
+      rotation: number;
+      rotationSpeed: number;
+      alpha: number;
+    };
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    const hearts: HeartParticle[] = Array.from({ length: 130 }, () => ({
+      x: Math.random() * window.innerWidth,
+      y: window.innerHeight + Math.random() * window.innerHeight,
+      size: 10 + Math.random() * 22,
+      speed: 0.8 + Math.random() * 1.8,
+      drift: Math.random() * 2 - 1,
+      rotation: Math.random() * Math.PI * 2,
+      rotationSpeed: (Math.random() - 0.5) * 0.04,
+      alpha: 0.18 + Math.random() * 0.48,
+    }));
+
+    const drawHeart = (heart: HeartParticle) => {
+      ctx.save();
+      ctx.translate(heart.x, heart.y);
+      ctx.rotate(heart.rotation);
+      ctx.scale(heart.size / 24, heart.size / 24);
+
+      ctx.beginPath();
+      ctx.moveTo(0, 8);
+      ctx.bezierCurveTo(-18, -6, -10, -22, 0, -12);
+      ctx.bezierCurveTo(10, -22, 18, -6, 0, 8);
+
+      ctx.fillStyle = `rgba(255, 255, 255, ${heart.alpha})`;
+      ctx.shadowColor = "rgba(255, 255, 255, 0.75)";
+      ctx.shadowBlur = 12;
+      ctx.fill();
+
+      ctx.restore();
+    };
+
+    let animationFrame = 0;
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      hearts.forEach((heart) => {
+        heart.y -= heart.speed;
+        heart.x += Math.sin(heart.y * 0.015) * heart.drift;
+        heart.rotation += heart.rotationSpeed;
+
+        if (heart.y < -60) {
+          heart.y = canvas.height + 60;
+          heart.x = Math.random() * canvas.width;
+          heart.size = 10 + Math.random() * 22;
+          heart.speed = 0.8 + Math.random() * 1.8;
+          heart.alpha = 0.18 + Math.random() * 0.48;
+        }
+
+        drawHeart(heart);
+      });
+
+      animationFrame = requestAnimationFrame(animate);
+    };
+
+    resize();
+    animate();
+
+    window.addEventListener("resize", resize);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
+
+  return <canvas ref={canvasRef} className="love-more-canvas" />;
 }
 
 export default function Ending() {
@@ -106,6 +201,8 @@ export default function Ending() {
   if (showLoveMore) {
   return (
     <div className="love-more-page">
+        <FloatingHeartCanvas />
+        
       <div className="love-more-heart">
         {Array.from({ length: 90 }).map((_, index) => (
           <div
