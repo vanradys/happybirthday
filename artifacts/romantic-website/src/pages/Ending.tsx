@@ -129,7 +129,7 @@ export default function Ending() {
               onClick={() => setIsAccepted(true)}
               className="rounded-full bg-[#fff7e8] px-12 py-4 text-xl font-black text-[#4b1515] shadow-xl transition hover:scale-110 hover:bg-[#ffd166] active:scale-95"
             >
-              YES
+              SAYANGPOLL
             </button>
 
             <button
@@ -148,7 +148,7 @@ export default function Ending() {
               }}
               className="rounded-full bg-[#9f1d23] px-12 py-4 text-xl font-black text-[#fff7e8] shadow-xl transition hover:bg-[#7f151b] active:scale-90"
             >
-              NO
+              GAKK
             </button>
           </div>
         </div>
