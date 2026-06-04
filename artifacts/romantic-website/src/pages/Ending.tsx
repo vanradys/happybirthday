@@ -98,7 +98,7 @@ export default function Ending() {
           {floatingHearts.map((heart) => (
             <Heart
               key={heart.id}
-              className="absolute text-white/35 opacity-60 animate-pulse"
+              className="absolute text-white/35 opacity-60 animate-[loveFloat_5s_ease-in-out_infinite]"
               fill="currentColor"
               style={{
                 left: heart.left,
@@ -120,7 +120,7 @@ export default function Ending() {
           />
 
           <h1 className="mb-14 text-5xl font-extrabold tracking-tight text-[#fff7e8] drop-shadow-sm sm:text-7xl">
-            Do you love me?
+            kamu sayang gakk sama akuu?
           </h1>
 
           <div className="relative flex h-28 items-center justify-center gap-8 sm:gap-12">

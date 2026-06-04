@@ -190,6 +190,16 @@
   animation: twinkle ease-in-out infinite;
 }
 
+@keyframes loveFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg) scale(1);
+  }
+
+  50% {
+    transform: translateY(-18px) rotate(8deg) scale(1.08);
+  }
+}
+
 /* Sparkle cursor effect */
 .sparkle-particle {
   position: fixed;

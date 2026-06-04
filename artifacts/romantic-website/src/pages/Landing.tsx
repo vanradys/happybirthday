@@ -91,19 +91,19 @@ export default function Landing() {
         </div>
       ) : (
         <div className="relative z-10 w-full max-w-xl mx-auto px-6">
-          <div className="rounded-[2rem] border border-[#f1d8b8] bg-[#fff7e8] px-7 py-9 text-center shadow-2xl backdrop-blur sm:px-10">
+          <div className="rounded-[2rem] border border-[#f1d8b8] bg-[#fff7e8] px-7 py-8 text-center shadow-2xl backdrop-blur sm:px-10">
             <div
-              className="text-6xl mb-5"
+              className="text-5xl mb-4"
               style={{ animation: "floatBounce 2s ease-in-out infinite" }}
             >
               💌
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-serif font-bold text-[#4b1515] mb-6 leading-snug">
+            <h1 className="text-2xl sm:text-3xl font-serif font-bold text-[#4b1515] mb-5 leading-snug">
               {birthdayLetter.title}
             </h1>
 
-            <div className="min-h-[210px] space-y-4 text-left">
+            <div className="space-y-4 text-left">
               {birthdayLetter.paragraphs
                 .slice(0, visibleParagraphCount)
                 .map((paragraph, index) => (
