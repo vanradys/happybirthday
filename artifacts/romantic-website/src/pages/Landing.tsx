@@ -47,7 +47,7 @@ export default function Landing() {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-rose-50 via-pink-50 to-rose-100">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#2b0808]">
       {hearts.map((h) => (
         <span
           key={h.id}
@@ -73,25 +73,25 @@ export default function Landing() {
             💌
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-serif font-bold text-rose-700 mb-4 leading-snug">
+          <h1 className="text-3xl sm:text-4xl font-serif font-bold text-[#fff7e8] mb-4 leading-snug">
             Hai sayang, aku bikin sesuatu buat kamu
           </h1>
 
-          <p className="text-base sm:text-lg text-rose-400 mb-10 font-light italic">
+          <p className="text-base sm:text-lg text-[#e8c96a] mb-10 font-light italic">
             Buka pelan-pelan ya, jangan langsung sok cool.
           </p>
 
           <button
             data-testid="button-start"
             onClick={handleStartOpen}
-            className="px-10 py-3.5 bg-primary text-white rounded-full font-semibold text-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-200"
+            className="px-10 py-3.5 bg-[#9f1d23] text-[#fff7e8] rounded-full font-semibold text-lg shadow-md hover:bg-[#7f151b] hover:shadow-xl hover:scale-105 transition-all duration-200"
           >
             Mulai Buka
           </button>
         </div>
       ) : (
         <div className="relative z-10 w-full max-w-xl mx-auto px-6">
-          <div className="rounded-[2rem] border border-rose-100 bg-white/80 px-7 py-9 text-center shadow-2xl backdrop-blur sm:px-10">
+          <div className="rounded-[2rem] border border-[#f1d8b8] bg-[#fff7e8] px-7 py-9 text-center shadow-2xl backdrop-blur sm:px-10">
             <div
               className="text-6xl mb-5"
               style={{ animation: "floatBounce 2s ease-in-out infinite" }}
@@ -99,7 +99,7 @@ export default function Landing() {
               💌
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-serif font-bold text-rose-700 mb-6 leading-snug">
+            <h1 className="text-2xl sm:text-3xl font-serif font-bold text-[#4b1515] mb-6 leading-snug">
               {birthdayLetter.title}
             </h1>
 
@@ -109,14 +109,14 @@ export default function Landing() {
                 .map((paragraph, index) => (
                   <p
                     key={index}
-                    className="animate-[fadeIn_0.35s_ease] rounded-2xl bg-rose-50 px-5 py-4 font-serif text-base leading-relaxed text-rose-700 shadow-sm"
+                    className="animate-[fadeIn_0.35s_ease] rounded-2xl bg-[#fff1f1] px-5 py-4 font-serif text-base leading-relaxed text-[#4b1515] shadow-sm"
                   >
                     {paragraph}
                   </p>
                 ))}
 
               {visibleParagraphCount === 0 && (
-                <p className="text-center text-sm italic text-rose-400">
+                <p className="text-center text-sm italic text-[#8a6262]">
                   Pencet tombolnya pelan-pelan ya, nanti kalimatnya muncul satu-satu.
                 </p>
               )}
@@ -125,7 +125,7 @@ export default function Landing() {
             <button
               type="button"
               onClick={handleNextLetterText}
-              className="mt-8 px-10 py-3.5 bg-primary text-white rounded-full font-semibold text-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-200"
+              className="mt-8 px-10 py-3.5 bg-[#9f1d23] text-[#fff7e8] rounded-full font-semibold text-lg shadow-md hover:bg-[#7f151b] hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
               {isAllParagraphVisible ? "Lanjut Buka Kuncinya ✨" : "Buka Kalimatnya 💗"}
             </button>
