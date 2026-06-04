@@ -27,14 +27,14 @@ export default function LetterPage({ letter }: LetterProps) {
           Kembali
         </button>
 
-        <div className="paper-texture p-7 sm:p-10 rounded-2xl">
-          <h1 className="text-xl sm:text-2xl font-serif font-bold text-center text-foreground mb-8">
+        <div className="paper-texture bg-[#fff7e8] p-7 sm:p-10 rounded-2xl">
+          <h1 className="text-xl sm:text-2xl font-serif font-bold text-center text-[#4b1515] mb-8">
             {letter.title}
           </h1>
 
           {!started ? (
             <div className="text-center py-6">
-              <p className="text-muted-foreground mb-6 text-sm italic">
+              <p className="text-[#8a6262] mb-6 text-sm italic">
                 Siap buat baca surat ini?
               </p>
               <button
@@ -43,7 +43,7 @@ export default function LetterPage({ letter }: LetterProps) {
                   setStarted(true);
                   setRevealed(1);
                 }}
-                className="px-7 py-3 bg-primary text-white rounded-full font-semibold hover:opacity-90 transition-opacity shadow-md"
+                className="px-7 py-3 bg-[#9f1d23] text-[#fff7e8] rounded-full font-semibold hover:bg-[#7f151b] transition-colors shadow-md"
               >
                 Klik nya yang sabar ya 💌
               </button>
@@ -54,7 +54,7 @@ export default function LetterPage({ letter }: LetterProps) {
                 {letter.paragraphs.slice(0, revealed).map((para, idx) => (
                   <p
                     key={idx}
-                    className="text-foreground leading-relaxed font-serif animate-[fadeIn_0.5s_ease]"
+                    className="text-[#4b1515] leading-relaxed font-serif animate-[fadeIn_0.5s_ease]"
                   >
                     {para}
                   </p>
@@ -66,20 +66,20 @@ export default function LetterPage({ letter }: LetterProps) {
                   <button
                     data-testid="button-next-paragraph"
                     onClick={() => setRevealed((r) => r + 1)}
-                    className="px-7 py-3 bg-primary text-white rounded-full font-semibold hover:opacity-90 transition-opacity"
+                    className="px-7 py-3 bg-[#9f1d23] text-[#fff7e8] rounded-full font-semibold hover:bg-[#7f151b] transition-colors"
                   >
                     Lanjut... 💕
                   </button>
                 ) : (
                   <div className="space-y-5 animate-[fadeIn_0.5s_ease]">
                     <div className="text-3xl">🌸</div>
-                    <p className="text-muted-foreground text-sm italic">
+                    <p className="text-[#8a6262] text-sm italic">
                       Sekian surat dari aku, semoga kamu suka ya.
                     </p>
                     <button
                       data-testid="button-back-to-menu-end"
                       onClick={() => setLocation("/menu")}
-                      className="px-7 py-3 bg-accent text-white rounded-full font-semibold hover:opacity-90 transition-opacity"
+                      className="px-7 py-3 bg-[#9f1d23] text-[#fff7e8] rounded-full font-semibold hover:bg-[#7f151b] transition-colors"
                     >
                       Kembali ke Menu
                     </button>
