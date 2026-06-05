@@ -125,54 +125,58 @@ export default function BirthdayIntroOverlay() {
         {phase === "cake" && (
           <div className="birthday-cake-scene">
             <div className="birthday-cake-stage">
-              <div
-                className="cute-cake"
-                onClick={(event) => {
-                  const rect = event.currentTarget.getBoundingClientRect();
-                  const left = event.clientX - rect.left;
-                  const top = event.clientY - rect.top;
-
-                  setCandles((prev) => [
-                    ...prev,
-                    {
-                      id: Date.now(),
-                      left,
-                      top,
-                      isBlown: false,
-                    },
-                  ]);
-                }}
-              >
-                <div className="cake-title">HAPPY BIRTHDAY!</div>
-
-                <div className="cake-plate" />
-                <div className="cake-layer cake-layer-bottom" />
-                <div className="cake-layer cake-layer-middle" />
-                <div className="cake-layer cake-layer-top" />
-                <div className="cake-icing" />
-                <div className="cake-drip cake-drip-1" />
-                <div className="cake-drip cake-drip-2" />
-                <div className="cake-drip cake-drip-3" />
-
-                {candles.map((candle) => (
-                  <div
-                    key={candle.id}
-                    className="cake-candle-real"
-                    style={{
-                      left: `${candle.left}px`,
-                      top: `${candle.top}px`,
-                    }}
-                  >
-                    {!candle.isBlown && <div className="cake-flame-real" />}
-                  </div>
-                ))}
+              <div className="cake-title cake-pop cake-pop-title">
+                HAPPY BIRTHDAY!
               </div>
 
-              <h1 className="birthday-cake-heading">
+              <div className="cake-pop cake-pop-cake cake-with-confetti">
+                <div
+                  className="cute-cake"
+                  onClick={(event) => {
+                    const rect = event.currentTarget.getBoundingClientRect();
+                    const left = event.clientX - rect.left;
+                    const top = event.clientY - rect.top;
+
+                    setCandles((prev) => [
+                      ...prev,
+                      {
+                        id: Date.now(),
+                        left,
+                        top,
+                        isBlown: false,
+                      },
+                    ]);
+                  }}
+                >
+                  <div className="cake-plate" />
+                  <div className="cake-layer cake-layer-bottom" />
+                  <div className="cake-layer cake-layer-middle" />
+                  <div className="cake-layer cake-layer-top" />
+                  <div className="cake-icing" />
+                  <div className="cake-drip cake-drip-1" />
+                  <div className="cake-drip cake-drip-2" />
+                  <div className="cake-drip cake-drip-3" />
+
+                  {candles.map((candle) => (
+                    <div
+                      key={candle.id}
+                      className="cake-candle-real"
+                      style={{
+                        left: `${candle.left}px`,
+                        top: `${candle.top}px`,
+                      }}
+                    >
+                      {!candle.isBlown && <div className="cake-flame-real" />}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <h1 className="birthday-cake-heading cake-pop cake-pop-heading">
                 Make a Wish★
               </h1>
 
-              <div className="birthday-cake-actions">
+              <div className="birthday-cake-actions cake-pop cake-pop-actions">
                 <button
                   type="button"
                   onClick={() => {
