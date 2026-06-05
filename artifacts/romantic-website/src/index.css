@@ -646,7 +646,7 @@ body::after {
 
 .cake-title {
   position: relative;
-  top: -10px;
+  top: 50px;
   width: 260px;
   padding: 10px 14px;
   background: #fff7e8;
