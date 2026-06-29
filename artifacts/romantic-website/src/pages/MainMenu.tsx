@@ -3,12 +3,12 @@ import { useLocation } from "wouter";
 const menuItems = [
   { emoji: "🥺", title: "Minta Maaf...", path: "/apology", from: "from-purple-100", to: "to-pink-100" },
   { emoji: "💗", title: "Rasa Sayangnya Akuu", path: "/love", from: "from-pink-100", to: "to-red-100" },
-  { emoji: "🌙", title: "Harapan Masa Depan sama Bubu", path: "/future", from: "from-indigo-100", to: "to-purple-100" },
+  { emoji: "🌙", title: "Harapan Masa Depan", path: "/future", from: "from-indigo-100", to: "to-purple-100" },
   { emoji: "📬", title: "Open When...", path: "/open-when", from: "from-amber-100", to: "to-yellow-100" },
-  { emoji: "📸", title: "Galeri Kitaa", path: "/gallery", from: "from-teal-100", to: "to-green-100" },
+  { emoji: "📸", title: "Galeri Kecil Kitaa", path: "/gallery", from: "from-teal-100", to: "to-green-100" },
   { emoji: "💌", title: "Pesan untuk Bubu", path: "/messages", from: "from-rose-100", to: "to-orange-100" },
-  { emoji: "📅", title: "Timeline Kitaa", path: "/timeline", from: "from-sky-100", to: "to-blue-100" },
-  { emoji: "🏆", title: "Achievement Bubu", path: "/achievements", from: "from-amber-100", to: "to-orange-100" },
+  { emoji: "📅", title: "Timeline Kitaa??", path: "/timeline", from: "from-sky-100", to: "to-blue-100" },
+  { emoji: "🏆", title: "Achievement For Bubu", path: "/achievements", from: "from-amber-100", to: "to-orange-100" },
   { emoji: "✨", title: "Wajib dibuka TERAKHIR", path: "/ending", from: "from-violet-100", to: "to-purple-100" },
 ];
 

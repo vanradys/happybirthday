@@ -74,11 +74,11 @@ export default function Landing() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-serif font-bold text-[#fff7e8] mb-4 leading-snug">
-            Hai sayang, aku bikin sesuatu buat kamu
+            Hai sayang, aku bikin sesuatu buat kamu, semoga kamu sukaa
           </h1>
 
           <p className="text-base sm:text-lg text-[#e8c96a] mb-10 font-light italic">
-            Buka pelan-pelan ya, jangan langsung sok cool.
+            Buka pelan-pelan yaa, jangan buru-buruu.
           </p>
 
           <button
