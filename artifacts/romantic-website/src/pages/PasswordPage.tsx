@@ -27,9 +27,9 @@ export default function PasswordPage() {
         className={`bg-white rounded-2xl shadow-xl p-8 max-w-sm w-full text-center ${shaking ? "animate-[shake_0.4s_ease]" : ""}`}
       >
         <div className="text-5xl mb-4">🔐</div>
-        <h2 className="text-2xl font-serif font-bold text-foreground mb-2">Satu kata kunci dulu</h2>
+        <h2 className="text-2xl font-serif font-bold text-foreground mb-2">Sebelum lanjut</h2>
         <p className="text-muted-foreground mb-6 text-sm">
-          Masukkan nama panggilan aku buat kamu
+          Apa nama panggilan kita?
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -47,7 +47,7 @@ export default function PasswordPage() {
 
           {error && (
             <p className="text-rose-500 text-sm font-medium animate-[fadeIn_0.2s_ease]">
-              Hmm masa lupa sih? coba lagi 😭
+              Hmm masa lupa sih? coba lagi🥺
             </p>
           )}
 

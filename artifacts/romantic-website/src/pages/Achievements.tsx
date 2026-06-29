@@ -28,7 +28,7 @@ export default function Achievements() {
           Achievement Unlocked
         </h1>
         <p className="text-center text-muted-foreground text-sm mb-8">
-          Terima kasih sudah jadi dia yang luar biasa 🏆
+          Terima kasih sudah menjadi laki-laki yang luar biasa 🏆
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

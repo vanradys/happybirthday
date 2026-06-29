@@ -1,5 +1,5 @@
 export const config = {
-  password: "sayang",
+  password: "bubu",
   coupleNames: { from: "Aku", to: "Kamu" },
   relationshipStart: new Date("2023-01-15"),
   whatsappNumber: "6282114072428",
@@ -11,7 +11,7 @@ export const config = {
         "Di hari yang spesial ini, aku ingin kamu tau...",
         "Setiap waktu bersamamu adalah hadiah terbaik...",
         "Semoga semua impianmu menjadi nyata...",
-        "Aku sayang kamu lebih dari kata-kata bisa ungkapkan."
+        "Aku sayang kamu lebih dari kata-kata yang bisa aku ungkapkan."
       ]
     },
     apology: {
@@ -19,7 +19,7 @@ export const config = {
       paragraphs: [
         "Aku tahu aku nggak selalu sempurna...",
         "Ada momen-momen di mana aku nyakitin kamu...",
-        "Tapi kamu harus tahu, setiap maaf aku itu tulus...",
+        "Tapi kamu harus tahu, setiap maaf dari aku itu tulus...",
         "Makasih ya udah sabar sama aku."
       ]
     },
@@ -27,7 +27,7 @@ export const config = {
       title: "Hal-hal yang Aku Suka dari Kamu 💗",
       paragraphs: [
         "Aku suka cara kamu ketawa...",
-        "Aku suka waktu kamu lagi semangat cerita sesuatu...",
+        "Aku suka waktu kamu lagi semangat cerita tentang sesuatu...",
         "Aku suka gimana kamu selalu ada buat aku...",
         "Pokoknya, aku suka kamu seutuhnya."
       ]
@@ -46,29 +46,29 @@ export const config = {
   openWhen: [
     { 
       emoji: "😢", title: "Open when kamu sedih",
-      message: "Hei, aku tahu hari ini berat. Tapi kamu kuat banget. Boleh nangis, boleh marah — tapi setelah itu, ingat aku selalu ada. Kamu nggak sendirian ya. Kirim pesan aku kalau butuh seseorang yang dengerin."
+      message: "Haloo bubu, aku tahu belakangan hari ini rasanya berat. Tapi kamu kuat banget. Boleh nangis, boleh marah — tapi setelah itu, ingat aku selalu ada. Kamu nggak sendirian ya. Kirim pesan ke aku kalau butuh seseorang buat dengerin."
     },
     { 
       emoji: "😴", title: "Open when kamu capek",
-      message: "Istirahat ya, sayang. Kamu udah kerja keras banget. Jangan lupa makan, minum, dan tidur yang cukup. Dunia bisa nunggu — kesehatanmu nggak bisa."
+      message: "Istirahat ya, sayang. Kamu udah kerja keras banget. Jangan lupa makan, minum, dan tidur yang cukup. Dunia bisa nunggu, tapi kesehatanmu nggak bisa. Tolong jangan paksain diri kamu, aku khawatir"
     },
     { 
       emoji: "🌀", title: "Open when kamu overthinking",
-      message: "Stop sebentar. Tarik napas. Pikiran kamu lagi full, tapi itu nggak berarti semua yang kamu khawatirin bakal terjadi. Kalau susah, cerita ke aku — dua kepala lebih baik dari satu."
+      message: "Stop sebentar. Tarik napas panjangg. Pikiran kamu lagi full, tapi itu nggak berarti semua yang kamu khawatirin bakal terjadi. Kalau susah, cerita ke aku, kita cari solusinya sama-sama."
     },
     { 
       emoji: "🤍", title: "Open when kamu kangen aku",
-      message: "Hiii kangennya! Aku juga kangen kamu tau. Gak usah nahan-nahan, langsung hubungi aku aja. Aku selalu mau dengerin suaramu, mau jam berapapun."
+      message: "KANGEN AKU YAAA??? Aku juga kangen bangettt tauu. Gak usah nahan-nahan, langsung telpunn aku aja. Aku selalu mau dengerin suara kamu, mau jam berapapun, kapanpun itu."
     },
   ],
 
   timeline: [
   { date: "19 Agustus 2023", emoji: "👀", title: "Awal Kenal", description: "Awalnya cuma saling sapa karena info manajemen kelas C, siapa sangka dari chat sesingkat itu semuanya dimulai."  },
-  { date: "1 September 2023", emoji: "🏆", title: "Mulai Sering Chat", description: "Dari ajakan ikut lomba, obrolan kecil kita pelan-pelan jadi makin sering dan makin nyaman."  },
+  { date: "1 September 2023", emoji: "🏆", title: "Mulai Sering Chat", description: "Dari aku awalnya cuma ajakin lomba, obrolan kecil kita pelan-pelan jadi makin sering dan makin nyaman."  },
   { date: "26 Oktober 2023", emoji: "💗", title: "Hari Kita Mulai", description: "Hari di mana kita resmi mulai jadi bagian penting dalam hidup satu sama lain." },
   { date: "26 Oktober 2024", emoji: "🐈", title: "Bahasa Kecil Kita", description: "Bubis, bubuu, goodmeowning, kucink, dan semua bahasa lucu yang akhirnya jadi dunia kecil milik kita berdua." },
-  { date: "26 Oktober2025", emoji: "☁️", title: "Safe Place", description: "Pelan-pelan kita bukan cuma jadi pasangan, tapi juga jadi tempat pulang dan tempat bersandar satu sama lain." },
-  { date: "Sekarang", emoji: "💍", title: "Masa Depan Kita", description: "Dari mimpi, rencana, sampai obrolan random tentang masa depan, aku senang karena di setiap versi hidupmu nanti, ada aku di sana." }
+  { date: "26 Oktober 2025", emoji: "☁️", title: "Safe Place", description: "Pelan-pelan kita bukan cuma jadi pasangan, tapi juga jadi tempat pulang dan tempat bersandar satu sama lain." },
+  { date: "Sekarang - Future Us", emoji: "💍", title: "Masa Depan Kita", description: "Dari mimpi, rencana, sampai obrolan random tentang masa depan, aku senang karena di setiap versi cerita hidupmu nanti, ada aku di sana." }
 ],
 
   gallery: [
@@ -91,6 +91,12 @@ export const config = {
     "Kamu spesial, dan itu bukan lebay.",
     "Aku selalu di sini kalau kamu butuh.",
     "Terima kasih jadi diri kamu sendiri.",
+    "Aku pilih kamu, setiap hari.",
+    "Aku suka cara kamu melihat dunia.",
+    "Aku suka lihat kamu excited sama hal-hal kecil.",
+    "Aku bakal ada di sisi kamu, pelan-pelan kita jalanin bareng.",
+    "Aku harap kamu selalu merasa dicintai.",
+
   ],
 
   achievements: [

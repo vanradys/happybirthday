@@ -64,7 +64,7 @@ export default function Gallery() {
         </div>
 
         <p className="text-center text-muted-foreground text-xs mt-10 italic">
-          Ganti placeholder di atas dengan foto asli kamu berdua ya 📸
+          Semoga kita bisa bikin lebih banyak lagi ya sayang 💖
         </p>
       </div>
     </div>
