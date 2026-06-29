@@ -877,7 +877,7 @@ body::after {
 }
 
 .birthday-cake-heading {
-  margin: 14px 0 6px !important;
+  margin: 36px 0 6px !important;
   font-size: clamp(2.2rem, 4vw, 3.1rem) !important;
   line-height: 1.1 !important;
   display: flex !important;
