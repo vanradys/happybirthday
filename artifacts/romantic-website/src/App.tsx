@@ -1,4 +1,4 @@
-import { Switch, Route, Router as WouterRouter, Redirect } from "wouter";
+import { Switch, Route, Router as WouterRouter, Redirect, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,6 +12,7 @@ import Timeline from "@/pages/Timeline";
 import Gallery from "@/pages/Gallery";
 import Messages from "@/pages/Messages";
 import Achievements from "@/pages/Achievements";
+import VideoIntroPage from "@/pages/VideoIntroPage";
 import Ending from "@/pages/Ending";
 import MusicPlayer from "@/components/MusicPlayer";
 import CursorEffect from "@/components/CursorEffect";
@@ -26,6 +27,16 @@ function AuthGuard({ children }: { children: React.ReactNode }) {
     return <Redirect to="/password" />;
   }
   return <>{children}</>;
+}
+
+function VideoIntroRoute() {
+  const [, setLocation] = useLocation();
+
+  return (
+    <AuthGuard>
+      <VideoIntroPage onNext={() => setLocation("/ending")} />
+    </AuthGuard>
+  );
 }
 
 function Router() {
@@ -113,6 +124,7 @@ function Router() {
           </AuthGuard>
         )}
       />
+      <Route path="/video-intro" component={VideoIntroRoute} />
       <Route
         path="/ending"
         component={() => (
