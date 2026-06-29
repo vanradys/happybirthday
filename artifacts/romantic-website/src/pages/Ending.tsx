@@ -1,5 +1,5 @@
-
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { useLocation } from "wouter";
 import { Heart } from "lucide-react";
 import { config } from "@/config";
 
@@ -118,9 +118,13 @@ function FloatingHeartCanvas() {
 }
 
 export default function Ending() {
+  const [, setLocation] = useLocation();
+
   const [stars, setStars] = useState<Star[]>([]);
   const [textVisible, setTextVisible] = useState(false);
-  const [isAccepted, setIsAccepted] = useState(false);
+  const [isAccepted, setIsAccepted] = useState<boolean>(() => {
+    return sessionStorage.getItem("show-final-ending") === "true";
+  });
   const [showLoveMore, setShowLoveMore] = useState(false);
   const [noBtnPosition, setNoBtnPosition] = useState<CSSProperties>({});
 
@@ -159,15 +163,15 @@ export default function Ending() {
   }, []);
 
   useEffect(() => {
-  if (!showLoveMore) return;
+    if (!showLoveMore) return;
 
-  const timer = window.setTimeout(() => {
-    setShowLoveMore(false);
-    setIsAccepted(true);
-  }, 4500);
+    const timer = window.setTimeout(() => {
+      sessionStorage.setItem("show-final-ending", "true");
+      setLocation("/video-intro");
+    }, 4500);
 
-  return () => window.clearTimeout(timer);
-}, [showLoveMore]);
+    return () => window.clearTimeout(timer);
+  }, [showLoveMore, setLocation]);
 
   const moveNoButton = () => {
     const buttonWidth = 120;
@@ -199,30 +203,30 @@ export default function Ending() {
   };
 
   if (showLoveMore) {
-  return (
-    <div className="love-more-page">
+    return (
+      <div className="love-more-page">
         <FloatingHeartCanvas />
 
-      <div className="love-more-heart">
-        {Array.from({ length: 90 }).map((_, index) => (
-          <div
-            className="love-more-item"
-            key={index}
-            style={{ "--i": index + 1 } as CSSProperties}
-          >
-            <div className="love-more-horizontal">
-              <div className="love-more-vertical">
-                <div className="love-more-word">I Love You</div>
+        <div className="love-more-heart">
+          {Array.from({ length: 90 }).map((_, index) => (
+            <div
+              className="love-more-item"
+              key={index}
+              style={{ "--i": index + 1 } as CSSProperties}
+            >
+              <div className="love-more-horizontal">
+                <div className="love-more-vertical">
+                  <div className="love-more-word">I Love You</div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <h1 className="love-more-title">LOVE YOU MORE SAYANGG</h1>
-    </div>
-  );
-}
+        <h1 className="love-more-title">LOVE YOU MORE SAYANGG</h1>
+      </div>
+    );
+  }
 
   if (!isAccepted) {
     return (
@@ -289,8 +293,6 @@ export default function Ending() {
     );
   }
 
-
-
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 via-indigo-950 to-black">
       {stars.map((star) => (
@@ -310,7 +312,7 @@ export default function Ending() {
 
       <div
         className={`relative z-10 text-center px-6 max-w-lg mx-auto ${
-              textVisible ? "ending-text-pop" : "ending-text-hidden"
+          textVisible ? "ending-text-pop" : "ending-text-hidden"
         }`}
       >
         <div className="text-5xl mb-8">🌠</div>
