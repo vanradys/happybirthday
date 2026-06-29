@@ -66,7 +66,10 @@ export default function BirthdayIntroOverlay() {
 
       <button
         type="button"
-        onClick={() => setShowIntro(false)}
+        onClick={() => {
+          sessionStorage.setItem("romantic-auth", "true");
+          window.location.href = "/menu";
+        }}
         className="absolute right-5 top-5 z-20 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs text-white/80 backdrop-blur hover:bg-white/20 transition"
       >
         Skip
