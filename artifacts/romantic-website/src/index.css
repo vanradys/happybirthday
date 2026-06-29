@@ -621,7 +621,7 @@ body::after {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 80px 16px 48px !important;
+  padding: 24px 16px 20px !important;
 }
 
 .birthday-cake-stage {
@@ -631,23 +631,25 @@ body::after {
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 18px !important;
+  gap: 0 !important;
+  transform: translateY(-18px) !important;
 }
 
 .cute-cake {
   position: relative;
   width: 300px !important;
   height: 300px !important;
-  margin: 54px auto 8px !important;
-  transform: scale(0.82) !important;
+  margin: 8px auto 0 !important;
+  transform: scale(0.78) !important;
   transform-origin: center center !important;
   animation: birthday-float 1.8s ease-in-out infinite;
 }
 
 .cake-title {
   position: relative;
-  top: 50px;
+  top: 0;
   width: 260px;
+  margin-bottom: 0;
   padding: 10px 14px;
   background: #fff7e8;
   color: #7b020b !important;
@@ -672,6 +674,8 @@ body::after {
 
 .cake-pop-cake {
   animation-delay: 0.35s;
+  margin-top: -28px !important;
+  margin-bottom: -58px !important;
 }
 
 .cake-pop-heading {
@@ -873,7 +877,7 @@ body::after {
 }
 
 .birthday-cake-heading {
-  margin: -8px 0 8px !important;
+  margin: 0 0 6px !important;
   font-size: clamp(2.2rem, 4vw, 3.1rem) !important;
   line-height: 1.1 !important;
   display: flex !important;
@@ -891,7 +895,7 @@ body::after {
   justify-content: center !important;
   gap: 16px !important;
   flex-wrap: wrap !important;
-  margin-top: 10px !important;
+  margin-top: 0 !important;
 }
 
 .birthday-outline-button,
