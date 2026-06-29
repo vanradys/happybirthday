@@ -132,7 +132,7 @@ function App() {
       <TooltipProvider>
         <BirthdayIntroOverlay />
 
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+        <WouterRouter>
           <CursorEffect />
           <Router />
           <MusicPlayer />

@@ -1,7 +1,6 @@
 import { useLocation } from "wouter";
 
 const menuItems = [
-  { emoji: "🎂", title: "Ulang Tahun Bubu", path: "/birthday", from: "from-rose-100", to: "to-pink-200" },
   { emoji: "🥺", title: "Minta Maaf...", path: "/apology", from: "from-purple-100", to: "to-pink-100" },
   { emoji: "💗", title: "Rasa Sayangnya Akuu", path: "/love", from: "from-pink-100", to: "to-red-100" },
   { emoji: "🌙", title: "Harapan Masa Depan sama Bubu", path: "/future", from: "from-indigo-100", to: "to-purple-100" },
@@ -46,8 +45,8 @@ export default function MainMenu() {
   const togetherText = getRelationshipDuration(relationshipStart);
 
   return (
-    <div className="min-h-screen bg-background py-10 px-4">
-      <div className="max-w-2xl mx-auto">
+    <div className="min-h-screen bg-background py-8 px-4">
+      <div className="max-w-3xl mx-auto">
         <div className="text-center mb-8">
           <div className="text-4xl mb-3">💑</div>
           <h1 className="text-2xl font-serif font-bold text-foreground">Aku bikin ini semua buat bubuu</h1>
@@ -60,13 +59,13 @@ export default function MainMenu() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           {menuItems.map((item) => (
             <button
               key={item.path}
               data-testid={`card-menu-${item.path.replace("/", "")}`}
               onClick={() => setLocation(item.path)}
-              className={`bg-gradient-to-br ${item.from} ${item.to} rounded-2xl p-4 sm:p-5 text-center shadow-sm hover:shadow-md hover:-translate-y-1 hover:scale-[1.03] transition-all duration-200 cursor-pointer`}
+              className={`min-h-[118px] bg-gradient-to-br ${item.from} ${item.to} rounded-2xl p-4 sm:p-5 text-center shadow-sm hover:shadow-md hover:-translate-y-1 hover:scale-[1.03] transition-all duration-200 cursor-pointer flex flex-col items-center justify-center`}
             >
               <div className="text-3xl mb-2">{item.emoji}</div>
               <p className="text-xs sm:text-sm font-semibold text-foreground leading-tight">{item.title}</p>
