@@ -32,9 +32,14 @@ function AuthGuard({ children }: { children: React.ReactNode }) {
 function VideoIntroRoute() {
   const [, setLocation] = useLocation();
 
+  const handleVideoFinished = () => {
+    sessionStorage.setItem("show-final-ending", "true");
+    setLocation("/ending");
+  };
+
   return (
     <AuthGuard>
-      <VideoIntroPage onNext={() => setLocation("/ending")} />
+      <VideoIntroPage onNext={handleVideoFinished} />
     </AuthGuard>
   );
 }

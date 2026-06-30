@@ -15,7 +15,7 @@ export default function MusicPlayer() {
   const shouldStopAutoPlayRef = useRef(false);
 
   useEffect(() => {
-    const audio = new Audio("/music.mp3");
+    const audio = new Audio("/penjaga-hati.mp3");
 
     audio.loop = true;
     audio.volume = 0.4;

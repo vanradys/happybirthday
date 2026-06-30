@@ -122,7 +122,7 @@ export default function Ending() {
 
   const [stars, setStars] = useState<Star[]>([]);
   const [textVisible, setTextVisible] = useState(false);
-  const [isAccepted, setIsAccepted] = useState<boolean>(() => {
+  const [isAccepted] = useState<boolean>(() => {
     return sessionStorage.getItem("show-final-ending") === "true";
   });
   const [showLoveMore, setShowLoveMore] = useState(false);
@@ -170,7 +170,7 @@ export default function Ending() {
     let afterFadeTimer: number;
 
     const goToVideoIntro = () => {
-      sessionStorage.setItem("show-final-ending", "true");
+      sessionStorage.removeItem("show-final-ending");
       setLocation("/video-intro");
     };
 
@@ -298,7 +298,10 @@ export default function Ending() {
           <div className="relative flex h-28 items-center justify-center gap-8 sm:gap-12">
             <button
               type="button"
-              onClick={() => setShowLoveMore(true)}
+              onClick={() => {
+                sessionStorage.removeItem("show-final-ending");
+                setShowLoveMore(true);
+              }}
               className="rounded-full bg-[#fff7e8] px-12 py-4 text-xl font-black text-[#4b1515] shadow-xl transition hover:scale-110 hover:bg-[#ffd166] active:scale-95"
             >
               SAYANGPOLL
