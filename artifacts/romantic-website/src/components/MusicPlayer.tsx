@@ -37,7 +37,7 @@ export default function MusicPlayer() {
       onClick={toggle}
       data-testid="music-player-toggle"
       title={isPlaying ? "Pause music" : "Play music"}
-      className={`fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 ${
+      className={`fixed bottom-6 right-6 z-[10000] w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 ${
         hasError
           ? "bg-muted text-muted-foreground opacity-50 cursor-not-allowed"
           : "bg-primary text-white"
