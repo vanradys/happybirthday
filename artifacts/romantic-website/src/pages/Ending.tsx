@@ -165,12 +165,47 @@ export default function Ending() {
   useEffect(() => {
     if (!showLoveMore) return;
 
-    const timer = window.setTimeout(() => {
+    let startFadeTimer: number;
+    let fallbackTimer: number;
+    let afterFadeTimer: number;
+
+    const goToVideoIntro = () => {
       sessionStorage.setItem("show-final-ending", "true");
       setLocation("/video-intro");
-    }, 4500);
+    };
 
-    return () => window.clearTimeout(timer);
+    const handleFadeOutDone = () => {
+      window.clearTimeout(fallbackTimer);
+
+      afterFadeTimer = window.setTimeout(() => {
+        goToVideoIntro();
+      }, 700);
+    };
+
+    startFadeTimer = window.setTimeout(() => {
+      window.addEventListener("birthday-music-fade-out-done", handleFadeOutDone, {
+        once: true,
+      });
+
+      window.dispatchEvent(
+        new CustomEvent("birthday-music-fade-out", {
+          detail: {
+            duration: 2500,
+          },
+        }),
+      );
+
+      fallbackTimer = window.setTimeout(() => {
+        goToVideoIntro();
+      }, 3600);
+    }, 4200);
+
+    return () => {
+      window.clearTimeout(startFadeTimer);
+      window.clearTimeout(fallbackTimer);
+      window.clearTimeout(afterFadeTimer);
+      window.removeEventListener("birthday-music-fade-out-done", handleFadeOutDone);
+    };
   }, [showLoveMore, setLocation]);
 
   const moveNoButton = () => {

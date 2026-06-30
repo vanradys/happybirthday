@@ -1,14 +1,21 @@
 import { useState, useRef, useEffect } from "react";
 import { Music, Pause } from "lucide-react";
 
+type MusicFadeOutEvent = CustomEvent<{
+  duration?: number;
+}>;
+
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [isBlocked, setIsBlocked] = useState(false);
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const fadeIntervalRef = useRef<number | null>(null);
+  const shouldStopAutoPlayRef = useRef(false);
 
   useEffect(() => {
-    const audio = new Audio("/penjaga-hati.mp3");
+    const audio = new Audio("/music.mp3");
 
     audio.loop = true;
     audio.volume = 0.4;
@@ -20,9 +27,16 @@ export default function MusicPlayer() {
       setHasError(true);
     };
 
-    let removeInteractionListeners = () => {};
+    const clearFadeInterval = () => {
+      if (fadeIntervalRef.current !== null) {
+        window.clearInterval(fadeIntervalRef.current);
+        fadeIntervalRef.current = null;
+      }
+    };
 
     const tryPlayMusic = async () => {
+      if (shouldStopAutoPlayRef.current) return;
+
       try {
         await audio.play();
 
@@ -40,13 +54,51 @@ export default function MusicPlayer() {
       tryPlayMusic();
     };
 
-    removeInteractionListeners = () => {
+    const removeInteractionListeners = () => {
       window.removeEventListener("click", playAfterFirstInteraction);
       window.removeEventListener("touchstart", playAfterFirstInteraction);
       window.removeEventListener("keydown", playAfterFirstInteraction);
     };
 
+    const handleFadeOut = (event: Event) => {
+      const fadeEvent = event as MusicFadeOutEvent;
+      const duration = fadeEvent.detail?.duration ?? 2500;
+
+      shouldStopAutoPlayRef.current = true;
+      removeInteractionListeners();
+      clearFadeInterval();
+
+      if (audio.paused) {
+        window.dispatchEvent(new CustomEvent("birthday-music-fade-out-done"));
+        return;
+      }
+
+      const startVolume = audio.volume;
+      const steps = 30;
+      const intervalTime = duration / steps;
+      let currentStep = 0;
+
+      fadeIntervalRef.current = window.setInterval(() => {
+        currentStep += 1;
+
+        const progress = currentStep / steps;
+        audio.volume = Math.max(0, startVolume * (1 - progress));
+
+        if (currentStep >= steps) {
+          clearFadeInterval();
+
+          audio.pause();
+          audio.volume = 0.4;
+
+          setIsPlaying(false);
+
+          window.dispatchEvent(new CustomEvent("birthday-music-fade-out-done"));
+        }
+      }, intervalTime);
+    };
+
     audio.addEventListener("error", handleError);
+    window.addEventListener("birthday-music-fade-out", handleFadeOut);
 
     const autoPlayTimer = window.setTimeout(() => {
       tryPlayMusic();
@@ -59,8 +111,11 @@ export default function MusicPlayer() {
     return () => {
       window.clearTimeout(autoPlayTimer);
       removeInteractionListeners();
+      clearFadeInterval();
 
       audio.removeEventListener("error", handleError);
+      window.removeEventListener("birthday-music-fade-out", handleFadeOut);
+
       audio.pause();
       audio.src = "";
 
@@ -78,6 +133,9 @@ export default function MusicPlayer() {
     }
 
     try {
+      shouldStopAutoPlayRef.current = false;
+
+      audioRef.current.volume = 0.4;
       await audioRef.current.play();
 
       setIsPlaying(true);
