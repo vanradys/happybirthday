@@ -138,6 +138,22 @@ function Router() {
   );
 }
 
+function MusicPlayerRouteGuard() {
+  const [location] = useLocation();
+
+  const isVideoPage = location === "/video-intro";
+
+  const isFinalEnding =
+    location === "/ending" &&
+    sessionStorage.getItem("show-final-ending") === "true";
+
+  if (isVideoPage || isFinalEnding) {
+    return null;
+  }
+
+  return <MusicPlayer />;
+}
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -147,7 +163,7 @@ function App() {
         <WouterRouter>
           <CursorEffect />
           <Router />
-          <MusicPlayer />
+          <MusicPlayerRouteGuard />
         </WouterRouter>
         <Toaster />
       </TooltipProvider>
