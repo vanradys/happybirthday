@@ -31,7 +31,7 @@ export default function CursorEffect() {
       if (now - lastTime < 20) return;
       lastTime = now;
 
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 2; i++) {
         createParticle(e.clientX, e.clientY);
       }
     };
