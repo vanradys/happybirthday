@@ -16,6 +16,7 @@ export default function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fadeIntervalRef = useRef<number | null>(null);
   const shouldStopAutoPlayRef = useRef(false);
+  const isTryingToPlayRef = useRef(false);
 
   useEffect(() => {
     const audio = new Audio(MUSIC_SRC);
@@ -38,26 +39,43 @@ export default function MusicPlayer() {
       window.removeEventListener("click", playAfterFirstInteraction, true);
       window.removeEventListener("touchstart", playAfterFirstInteraction, true);
       window.removeEventListener("keydown", playAfterFirstInteraction, true);
+      window.removeEventListener("scroll", playAfterFirstInteraction, true);
     };
 
-    const tryPlayMusic = async () => {
-      if (shouldStopAutoPlayRef.current || hasError) return;
+    const playMusic = async (useMutedAutoplay = false) => {
+      if (shouldStopAutoPlayRef.current || isTryingToPlayRef.current) return;
+
+      isTryingToPlayRef.current = true;
 
       try {
         audio.volume = DEFAULT_VOLUME;
+        audio.muted = useMutedAutoplay;
+
         await audio.play();
+
+        if (useMutedAutoplay) {
+          window.setTimeout(() => {
+            if (!shouldStopAutoPlayRef.current) {
+              audio.muted = false;
+              audio.volume = DEFAULT_VOLUME;
+            }
+          }, 250);
+        }
 
         setIsPlaying(true);
         setIsBlocked(false);
         removeInteractionListeners();
       } catch {
+        audio.muted = false;
         setIsPlaying(false);
         setIsBlocked(true);
+      } finally {
+        isTryingToPlayRef.current = false;
       }
     };
 
     function playAfterFirstInteraction() {
-      tryPlayMusic();
+      playMusic(false);
     }
 
     const handleError = () => {
@@ -95,6 +113,7 @@ export default function MusicPlayer() {
           clearFadeInterval();
 
           audio.pause();
+          audio.muted = false;
           audio.volume = DEFAULT_VOLUME;
 
           setIsPlaying(false);
@@ -110,10 +129,20 @@ export default function MusicPlayer() {
     window.addEventListener("click", playAfterFirstInteraction, true);
     window.addEventListener("touchstart", playAfterFirstInteraction, true);
     window.addEventListener("keydown", playAfterFirstInteraction, true);
+    window.addEventListener("scroll", playAfterFirstInteraction, true);
 
-    tryPlayMusic();
+    // Attempt 1: autoplay normal. Browser may block this.
+    playMusic(false);
+
+    // Attempt 2: muted autoplay trick. Some browsers allow this, then we unmute shortly after.
+    const mutedAutoplayTimer = window.setTimeout(() => {
+      if (audio.paused && !shouldStopAutoPlayRef.current) {
+        playMusic(true);
+      }
+    }, 450);
 
     return () => {
+      window.clearTimeout(mutedAutoplayTimer);
       removeInteractionListeners();
       clearFadeInterval();
 
@@ -125,12 +154,12 @@ export default function MusicPlayer() {
 
       audioRef.current = null;
     };
-  }, [hasError]);
+  }, []);
 
   const toggle = async () => {
     if (!audioRef.current || hasError) return;
 
-    if (isPlaying) {
+    if (isPlaying && !audioRef.current.paused) {
       shouldStopAutoPlayRef.current = true;
       audioRef.current.pause();
       setIsPlaying(false);
@@ -139,7 +168,9 @@ export default function MusicPlayer() {
 
     try {
       shouldStopAutoPlayRef.current = false;
+      audioRef.current.muted = false;
       audioRef.current.volume = DEFAULT_VOLUME;
+
       await audioRef.current.play();
 
       setIsPlaying(true);
