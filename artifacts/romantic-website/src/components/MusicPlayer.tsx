@@ -5,6 +5,9 @@ type MusicFadeOutEvent = CustomEvent<{
   duration?: number;
 }>;
 
+const MUSIC_SRC = "/penjaga-hati.mp3";
+const DEFAULT_VOLUME = 0.4;
+
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -15,17 +18,13 @@ export default function MusicPlayer() {
   const shouldStopAutoPlayRef = useRef(false);
 
   useEffect(() => {
-    const audio = new Audio("/penjaga-hati.mp3");
+    const audio = new Audio(MUSIC_SRC);
 
     audio.loop = true;
-    audio.volume = 0.4;
+    audio.volume = DEFAULT_VOLUME;
     audio.preload = "auto";
 
     audioRef.current = audio;
-
-    const handleError = () => {
-      setHasError(true);
-    };
 
     const clearFadeInterval = () => {
       if (fadeIntervalRef.current !== null) {
@@ -34,15 +33,22 @@ export default function MusicPlayer() {
       }
     };
 
+    const removeInteractionListeners = () => {
+      window.removeEventListener("pointerdown", playAfterFirstInteraction, true);
+      window.removeEventListener("click", playAfterFirstInteraction, true);
+      window.removeEventListener("touchstart", playAfterFirstInteraction, true);
+      window.removeEventListener("keydown", playAfterFirstInteraction, true);
+    };
+
     const tryPlayMusic = async () => {
-      if (shouldStopAutoPlayRef.current) return;
+      if (shouldStopAutoPlayRef.current || hasError) return;
 
       try {
+        audio.volume = DEFAULT_VOLUME;
         await audio.play();
 
         setIsPlaying(true);
         setIsBlocked(false);
-
         removeInteractionListeners();
       } catch {
         setIsPlaying(false);
@@ -50,14 +56,15 @@ export default function MusicPlayer() {
       }
     };
 
-    const playAfterFirstInteraction = () => {
+    function playAfterFirstInteraction() {
       tryPlayMusic();
-    };
+    }
 
-    const removeInteractionListeners = () => {
-      window.removeEventListener("click", playAfterFirstInteraction);
-      window.removeEventListener("touchstart", playAfterFirstInteraction);
-      window.removeEventListener("keydown", playAfterFirstInteraction);
+    const handleError = () => {
+      setHasError(true);
+      setIsPlaying(false);
+      setIsBlocked(false);
+      removeInteractionListeners();
     };
 
     const handleFadeOut = (event: Event) => {
@@ -73,7 +80,7 @@ export default function MusicPlayer() {
         return;
       }
 
-      const startVolume = audio.volume;
+      const startVolume = audio.volume || DEFAULT_VOLUME;
       const steps = 30;
       const intervalTime = duration / steps;
       let currentStep = 0;
@@ -88,10 +95,9 @@ export default function MusicPlayer() {
           clearFadeInterval();
 
           audio.pause();
-          audio.volume = 0.4;
+          audio.volume = DEFAULT_VOLUME;
 
           setIsPlaying(false);
-
           window.dispatchEvent(new CustomEvent("birthday-music-fade-out-done"));
         }
       }, intervalTime);
@@ -100,16 +106,14 @@ export default function MusicPlayer() {
     audio.addEventListener("error", handleError);
     window.addEventListener("birthday-music-fade-out", handleFadeOut);
 
-    const autoPlayTimer = window.setTimeout(() => {
-      tryPlayMusic();
-    }, 500);
+    window.addEventListener("pointerdown", playAfterFirstInteraction, true);
+    window.addEventListener("click", playAfterFirstInteraction, true);
+    window.addEventListener("touchstart", playAfterFirstInteraction, true);
+    window.addEventListener("keydown", playAfterFirstInteraction, true);
 
-    window.addEventListener("click", playAfterFirstInteraction);
-    window.addEventListener("touchstart", playAfterFirstInteraction);
-    window.addEventListener("keydown", playAfterFirstInteraction);
+    tryPlayMusic();
 
     return () => {
-      window.clearTimeout(autoPlayTimer);
       removeInteractionListeners();
       clearFadeInterval();
 
@@ -121,12 +125,13 @@ export default function MusicPlayer() {
 
       audioRef.current = null;
     };
-  }, []);
+  }, [hasError]);
 
   const toggle = async () => {
     if (!audioRef.current || hasError) return;
 
     if (isPlaying) {
+      shouldStopAutoPlayRef.current = true;
       audioRef.current.pause();
       setIsPlaying(false);
       return;
@@ -134,8 +139,7 @@ export default function MusicPlayer() {
 
     try {
       shouldStopAutoPlayRef.current = false;
-
-      audioRef.current.volume = 0.4;
+      audioRef.current.volume = DEFAULT_VOLUME;
       await audioRef.current.play();
 
       setIsPlaying(true);
@@ -147,6 +151,7 @@ export default function MusicPlayer() {
 
   return (
     <button
+      type="button"
       onClick={toggle}
       data-testid="music-player-toggle"
       title={

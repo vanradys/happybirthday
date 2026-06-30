@@ -163,12 +163,11 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <BirthdayIntroOverlay />
-
         <WouterRouter>
           <CursorEffect />
-          <Router />
           <MusicPlayerRouteGuard />
+          <BirthdayIntroOverlay />
+          <Router />
         </WouterRouter>
         <Toaster />
       </TooltipProvider>
