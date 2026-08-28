@@ -27,7 +27,7 @@ export default function PasswordPage() {
         className={`bg-white rounded-2xl shadow-xl p-8 max-w-sm w-full text-center ${shaking ? "animate-[shake_0.4s_ease]" : ""}`}
       >
         <div className="text-5xl mb-4">🔐</div>
-        <h2 className="text-2xl font-serif font-bold text-foreground mb-2">Sebelum lanjut</h2>
+        <h2 className="text-2xl font-serif font-bold text-foreground mb-2">BENTAR DULU . . .</h2>
         <p className="text-muted-foreground mb-6 text-sm">
           Apa nama panggilan kita?
         </p>
@@ -47,7 +47,7 @@ export default function PasswordPage() {
 
           {error && (
             <p className="text-rose-500 text-sm font-medium animate-[fadeIn_0.2s_ease]">
-              Hmm masa lupa sih? coba lagi🥺
+               KOK LUPAAA SIIIII? coba lagi🥺
             </p>
           )}
 

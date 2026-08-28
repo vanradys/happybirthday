@@ -232,7 +232,7 @@ export default function BirthdayIntroOverlay() {
               Happy Birthday!
             </h2>
             <p className="mb-7 text-sm text-white/75">
-              Ada surat kecil yang aku siapin buat kamu.
+              Ada suprise kecil yang aku siapin buat kamu.
             </p>
             <button
               type="button"

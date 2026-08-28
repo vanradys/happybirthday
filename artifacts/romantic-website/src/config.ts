@@ -46,7 +46,7 @@ export const config = {
   openWhen: [
     { 
       emoji: "😢", title: "Open when kamu sedih",
-      message: "Haloo bubu, aku tahu belakangan hari ini rasanya berat. Tapi kamu kuat banget. Boleh nangis, boleh marah — tapi setelah itu, ingat aku selalu ada. Kamu nggak sendirian ya. Kirim pesan ke aku kalau butuh seseorang buat dengerin."
+      message: "Haloo bubu, aku tahu belakangan hari ini rasanya berat. Tapi kamu kuat banget. Boleh nangis, boleh marah, tapi setelah itu, ingat aku selalu ada. Kamu nggak sendirian yaa. Kirim pesan ke aku kalau butuh seseorang buat dengerin."
     },
     { 
       emoji: "😴", title: "Open when kamu capek",

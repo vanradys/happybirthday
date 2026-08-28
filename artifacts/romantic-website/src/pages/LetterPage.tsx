@@ -35,7 +35,7 @@ export default function LetterPage({ letter }: LetterProps) {
           {!started ? (
             <div className="text-center py-6">
               <p className="text-[#8a6262] mb-6 text-sm italic">
-                Siap buat baca surat ini?
+                Siap buat baca surat dari akuu?
               </p>
               <button
                 data-testid="button-open-letter"
@@ -45,7 +45,7 @@ export default function LetterPage({ letter }: LetterProps) {
                 }}
                 className="px-7 py-3 bg-[#9f1d23] text-[#fff7e8] rounded-full font-semibold hover:bg-[#7f151b] transition-colors shadow-md"
               >
-                Klik nya yang sabar ya 💌
+                Klik nya yang sabar yaa 💌
               </button>
             </div>
           ) : (
@@ -74,7 +74,7 @@ export default function LetterPage({ letter }: LetterProps) {
                   <div className="space-y-5 animate-[fadeIn_0.5s_ease]">
                     <div className="text-3xl">🌸</div>
                     <p className="text-[#8a6262] text-sm italic">
-                      Sekian surat dari aku, semoga kamu suka ya.
+                      Sekian surat dari aku, semoga sukaa yaa
                     </p>
                     <button
                       data-testid="button-back-to-menu-end"

@@ -38,7 +38,7 @@ export default function Messages() {
           <div className="text-6xl mb-4">💌</div>
           <h1 className="text-2xl font-serif font-bold text-foreground mb-2">Pesan Sayang</h1>
           <p className="text-muted-foreground text-sm mb-10">
-            Tekan tombol kalau butuh kata-kata manis
+            Tekan tombol kalau butuh kata-kata manis dari aku
           </p>
 
           {message && (
