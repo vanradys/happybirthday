@@ -74,7 +74,7 @@ export default function LetterPage({ letter }: LetterProps) {
                   <div className="space-y-5 animate-[fadeIn_0.5s_ease]">
                     <div className="text-3xl">🌸</div>
                     <p className="text-[#8a6262] text-sm italic">
-                      Sekian surat dari aku, semoga sukaa yaa
+                      Rasa Sayangnya gak cuma segini kok, buka page lain yaa buat liat lebih banyak 💌
                     </p>
                     <button
                       data-testid="button-back-to-menu-end"

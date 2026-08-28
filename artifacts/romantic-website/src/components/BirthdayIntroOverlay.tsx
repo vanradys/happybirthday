@@ -239,7 +239,7 @@ export default function BirthdayIntroOverlay() {
               onClick={() => setPhase("envelope")}
               className="rounded-full bg-[#ffd166] px-7 py-3 font-bold text-[#5a1414] shadow-lg hover:scale-105 transition"
             >
-              Open Letter ✉︎
+              Open The Suprise 𝜗ৎ
             </button>
           </div>
         )}
