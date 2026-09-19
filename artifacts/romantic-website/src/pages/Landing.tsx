@@ -66,12 +66,12 @@ export default function Landing() {
 
       {!showLetter ? (
         <div className="relative z-10 text-center px-6 max-w-lg mx-auto">
-          <div
-            className="text-6xl mb-6"
+          <img
+            src="/open.png"
+            alt="Open"
+            className="mx-auto mb-6 h-28 w-28 object-contain drop-shadow-lg"
             style={{ animation: "floatBounce 2s ease-in-out infinite" }}
-          >
-            💌
-          </div>
+          />
 
           <h1 className="text-3xl sm:text-4xl font-serif font-bold text-[#fff7e8] mb-4 leading-snug">
             Hai sayang, aku bikin sesuatu buat kamu, semoga kamu sukaa
@@ -92,12 +92,12 @@ export default function Landing() {
       ) : (
         <div className="relative z-10 w-full max-w-xl mx-auto px-6">
           <div className="rounded-[2rem] border border-[#f1d8b8] bg-[#fff7e8] px-7 py-8 text-center shadow-2xl backdrop-blur sm:px-10">
-            <div
-              className="text-5xl mb-4"
+            <img
+              src="/open.png"
+              alt="Open"
+              className="mx-auto mb-4 h-24 w-24 object-contain drop-shadow-md"
               style={{ animation: "floatBounce 2s ease-in-out infinite" }}
-            >
-              💌
-            </div>
+            />
 
             <h1 className="text-2xl sm:text-3xl font-serif font-bold text-[#4b1515] mb-5 leading-snug">
               {birthdayLetter.title}

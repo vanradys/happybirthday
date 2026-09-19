@@ -134,7 +134,7 @@ export default function VideoIntroPage({ onNext }: VideoIntroPageProps) {
               onClick={handleContinueToFriendsVideo}
               className="video-next-button"
             >
-              Lanjut ke Video Teman-teman
+              Lanjut?
             </button>
           )}
         </div>
@@ -148,31 +148,13 @@ export default function VideoIntroPage({ onNext }: VideoIntroPageProps) {
 
       {step === "friends-video" && (
         <div className="video-wrapper">
-          <div className="video-frame">
-            <img
-              src="/video_page/decor.png"
-              alt="Decor 1"
-              className="video-decor video-decor-1"
-            />
-            <img
-              src="/video_page/decor2.png"
-              alt="Decor 2"
-              className="video-decor video-decor-2"
-            />
-            <img
-              src="/video_page/decor3.png"
-              alt="Decor 3"
-              className="video-decor video-decor-3"
-            />
-
-            <video
-              className="memory-video"
-              src="/videos/friends-video.mp4"
-              controls
-              autoPlay
-              onEnded={handleFriendsVideoEnd}
-            />
-          </div>
+          <video
+            className="memory-video"
+            src="/videos/friends-video.mp4"
+            controls
+            autoPlay
+            onEnded={handleFriendsVideoEnd}
+          />
 
           {isFriendsVideoFinished && (
             <button
