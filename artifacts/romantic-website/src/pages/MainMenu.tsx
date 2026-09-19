@@ -64,7 +64,7 @@ export default function MainMenu() {
             />
           </div>
 
-          <h1 className="text-2xl font-serif font-bold text-foreground">Aku bikin ini semua buat bubuu</h1>
+          <h1 className="text-2xl font-serif font-bold text-foreground">Aku bikin ini semua buat my duduu</h1>
 
           <div className="inline-block mt-3 px-5 py-2 bg-primary/10 rounded-full">
             <p className="text-sm text-foreground">

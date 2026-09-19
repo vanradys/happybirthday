@@ -27,6 +27,7 @@ export default function VideoIntroPage({ onNext }: VideoIntroPageProps) {
   const [currentTextIndex, setCurrentTextIndex] = useState<number>(0);
   const [showIntroText, setShowIntroText] = useState<boolean>(false);
   const [step, setStep] = useState<VideoStep>("intro-text");
+  const [isMainVideoFinished, setIsMainVideoFinished] = useState<boolean>(false);
   const [isFriendsVideoFinished, setIsFriendsVideoFinished] = useState<boolean>(false);
 
   useEffect(() => {
@@ -51,6 +52,7 @@ export default function VideoIntroPage({ onNext }: VideoIntroPageProps) {
 
     const videoTimer = window.setTimeout(() => {
       setStep("main-video");
+      setIsMainVideoFinished(false);
     }, TEXT_DURATION);
 
     return () => window.clearTimeout(videoTimer);
@@ -68,7 +70,12 @@ export default function VideoIntroPage({ onNext }: VideoIntroPageProps) {
   }, [step]);
 
   const handleMainVideoEnd = () => {
+    setIsMainVideoFinished(true);
+  };
+
+  const handleContinueToFriendsVideo = () => {
     setStep("friends-text");
+    setIsMainVideoFinished(false);
   };
 
   const handleFriendsVideoEnd = () => {
@@ -95,13 +102,41 @@ export default function VideoIntroPage({ onNext }: VideoIntroPageProps) {
 
       {step === "main-video" && (
         <div className="video-wrapper">
-          <video
-            className="memory-video"
-            src="/videos/memory-video.mp4"
-            controls
-            autoPlay
-            onEnded={handleMainVideoEnd}
-          />
+          <div className="video-frame">
+            <img
+              src="/video_page/decor.png"
+              alt="Decor 1"
+              className="video-decor video-decor-1"
+            />
+            <img
+              src="/video_page/decor2.png"
+              alt="Decor 2"
+              className="video-decor video-decor-2"
+            />
+            <img
+              src="/video_page/decor3.png"
+              alt="Decor 3"
+              className="video-decor video-decor-3"
+            />
+
+            <video
+              className="memory-video"
+              src="/videos/memory-video.mp4"
+              controls
+              autoPlay
+              onEnded={handleMainVideoEnd}
+            />
+          </div>
+
+          {isMainVideoFinished && (
+            <button
+              type="button"
+              onClick={handleContinueToFriendsVideo}
+              className="video-next-button"
+            >
+              Lanjut ke Video Teman-teman
+            </button>
+          )}
         </div>
       )}
 
@@ -113,19 +148,37 @@ export default function VideoIntroPage({ onNext }: VideoIntroPageProps) {
 
       {step === "friends-video" && (
         <div className="video-wrapper">
-          <video
-            className="memory-video"
-            src="/videos/friends-video.mp4"
-            controls
-            autoPlay
-            onEnded={handleFriendsVideoEnd}
-          />
+          <div className="video-frame">
+            <img
+              src="/video_page/decor.png"
+              alt="Decor 1"
+              className="video-decor video-decor-1"
+            />
+            <img
+              src="/video_page/decor2.png"
+              alt="Decor 2"
+              className="video-decor video-decor-2"
+            />
+            <img
+              src="/video_page/decor3.png"
+              alt="Decor 3"
+              className="video-decor video-decor-3"
+            />
+
+            <video
+              className="memory-video"
+              src="/videos/friends-video.mp4"
+              controls
+              autoPlay
+              onEnded={handleFriendsVideoEnd}
+            />
+          </div>
 
           {isFriendsVideoFinished && (
             <button
               type="button"
               onClick={handleFinishClick}
-              className="mt-6 rounded-full bg-[#fff7e8] px-10 py-3 text-base font-black text-[#4b1515] shadow-xl transition hover:scale-105 hover:bg-[#ffd166] active:scale-95"
+              className="video-next-button"
             >
               Selesai
             </button>
