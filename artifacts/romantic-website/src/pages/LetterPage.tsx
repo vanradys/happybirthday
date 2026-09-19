@@ -35,7 +35,7 @@ export default function LetterPage({ letter }: LetterProps) {
           {!started ? (
             <div className="text-center py-6">
               <p className="text-[#8a6262] mb-6 text-sm italic">
-                Siap buat baca surat dari akuu?
+                kasihtau pendapat bubis ya hehe...
               </p>
               <button
                 data-testid="button-open-letter"

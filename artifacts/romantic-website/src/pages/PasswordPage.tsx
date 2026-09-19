@@ -26,7 +26,11 @@ export default function PasswordPage() {
       <div
         className={`bg-white rounded-2xl shadow-xl p-8 max-w-sm w-full text-center ${shaking ? "animate-[shake_0.4s_ease]" : ""}`}
       >
-        <div className="text-5xl mb-4">🔐</div>
+        <img
+          src="/password-icon.png"
+          alt="Password icon"
+          className="mx-auto mb-4 h-24 w-24 object-contain drop-shadow-md"
+        />
         <h2 className="text-2xl font-serif font-bold text-foreground mb-2">BENTAR DULU . . .</h2>
         <p className="text-muted-foreground mb-6 text-sm">
           Apa nama panggilan kita?

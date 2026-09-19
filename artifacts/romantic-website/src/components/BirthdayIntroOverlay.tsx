@@ -247,7 +247,11 @@ export default function BirthdayIntroOverlay() {
 
         {phase === "envelope" && (
           <div className="birthday-intro-pop rounded-3xl border border-white/10 bg-[#fff8ec] p-8 text-[#5a1414] shadow-2xl">
-            <div className="mb-4 text-8xl birthday-envelope-float">💌</div>
+            <img
+              src="/suprise.png"
+              alt="Surprise"
+              className="mx-auto mb-4 h-32 w-32 object-contain birthday-envelope-float"
+            />
             <h2 className="mb-3 font-serif text-3xl font-bold">
               Surprise is ready
             </h2>
