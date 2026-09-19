@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SYMBOLS = ["♥", "✦", "✧", "♡", "✿", "·", "✨", "💕"];
+const SYMBOLS = ["♥", "✦", "✧", "♡", "✿", "·", "✦", "❤︎"];
 
 export default function CursorEffect() {
   useEffect(() => {

@@ -62,7 +62,7 @@ export default function Messages() {
             onClick={getNewMessage}
             className="px-8 py-4 bg-primary text-white rounded-full font-semibold text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
           >
-            Klik kalau butuh disayang 💕
+            Klik kalau butuh disayang ❤︎
           </button>
         </div>
       </div>

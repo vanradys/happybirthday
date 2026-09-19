@@ -127,7 +127,7 @@ export default function Landing() {
               onClick={handleNextLetterText}
               className="mt-8 px-10 py-3.5 bg-[#9f1d23] text-[#fff7e8] rounded-full font-semibold text-lg shadow-md hover:bg-[#7f151b] hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
-              {isAllParagraphVisible ? "Lanjut Buka Kuncinya ✨" : "Buka Kalimatnya 💗"}
+              {isAllParagraphVisible ? "Lanjut Buka Kuncinya ✦" : "Buka Kalimatnya ❤︎"}
             </button>
           </div>
         </div>

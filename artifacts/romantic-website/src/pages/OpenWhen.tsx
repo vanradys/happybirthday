@@ -36,7 +36,12 @@ export default function OpenWhen() {
               onClick={() => setSelected(item)}
               className="bg-white border-2 border-border rounded-2xl p-6 text-left shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-primary transition-all duration-200"
             >
-              <div className="text-4xl mb-3">{item.emoji}</div>
+              <img
+                src={item.icon}
+                alt={item.title}
+                className="mb-3 h-16 w-16 object-contain drop-shadow-md"
+                loading="lazy"
+              />
               <p className="font-semibold text-foreground">{item.title}</p>
               <p className="text-xs text-muted-foreground mt-1">Klik untuk membuka</p>
             </button>
@@ -60,7 +65,12 @@ export default function OpenWhen() {
             >
               <X size={20} />
             </button>
-            <div className="text-5xl mb-4 text-center">{selected.emoji}</div>
+            <img
+              src={selected.icon}
+              alt={selected.title}
+              className="mx-auto mb-4 h-20 w-20 object-contain drop-shadow-md"
+              loading="lazy"
+            />
             <h3 className="text-xl font-serif font-bold text-foreground mb-4 text-center">
               {selected.title}
             </h3>

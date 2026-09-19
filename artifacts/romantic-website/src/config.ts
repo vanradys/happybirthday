@@ -15,7 +15,7 @@ export const config = {
       ]
     },
     apology: {
-      title: "Maafin Aku Ya 🥺",
+      title: "Maafin Aku Ya...",
       paragraphs: [
         "Aku tau aku nggak selalu sempurna...",
         "Ada momen-momen di mana aku nyakitin kamu...",
@@ -26,7 +26,7 @@ export const config = {
       ]
     },
     love: {
-      title: "Hal-hal yang Aku Suka dari Kamu 💗",
+      title: "Hal-hal yang Aku Suka dari Kamu",
       paragraphs: [
         "Aku suka cara kamu ketawa...",
         "Aku suka waktu kamu lagi excited cerita tentang sesuatu...",
@@ -38,7 +38,7 @@ export const config = {
       ]
     },
     future: {
-      title: "Harapanku Buat Kita 🌙",
+      title: "Harapanku Buat Kita",
       paragraphs: [
         "Aku pengen kita bisa traveling ke tempat-tempat impian kita...",
         "Aku pengen kita bisa bikin lebih banyak cerita bersama...",
@@ -54,19 +54,23 @@ export const config = {
 
   openWhen: [
     { 
-      emoji: "😢", title: "Open when kamu sedih",
+      icon: "/open_when/sedih.png",
+      title: "Open when kamu sedih",
       message: "Haloo bubu, aku tahu belakangan hari ini rasanya berat. Tapi kamu kuat banget. Boleh nangis, boleh marah, tapi setelah itu, bangkit lagi yaa, dan ingat kalau aku selalu ada. Kamu nggak sendirian yaa. Kirim pesan ke aku kalau butuh seseorang buat dengerin."
     },
     { 
-      emoji: "😴", title: "Open when kamu capek",
+      icon: "/open_when/capek.png",
+      title: "Open when kamu capek",
       message: "Istirahat ya, sayang. Kamu udah kerja keras!!. Jangan lupa makan, minum, dan tidur yang cukup. Dunia bisa nunggu, tapi kesehatanmu nggak bisa. Tolong jangan paksain diri kamu, aku khawatir sayangg"
     },
     { 
-      emoji: "🌀", title: "Open when kamu overthinking",
+      icon: "/open_when/ovt.png",
+      title: "Open when kamu overthinking",
       message: "Stop sebentar. Tarik napas panjangg. Pikiran kamu lagi full, tapi itu nggak berarti semua yang kamu khawatirin bakal terjadi. Kalau susah, cerita ke aku, kita cari solusinya sama-sama."
     },
     { 
-      emoji: "🤍", title: "Open when kamu kangen aku",
+      icon: "/open_when/kangen.png",
+      title: "Open when kamu kangen aku",
       message: "KANGEN AKU YAAA??? Aku juga kangen bangettt tauu. Gak usah nahan-nahan, langsung telpunn aku aja. Aku selalu mau dengerin suara kamu, jam berapapun, kapanpun itu."
     },
   ],
@@ -83,27 +87,27 @@ export const config = {
   gallery: [
     {
       src: "/gallery/bday.jpg",
-      caption: "Momen favorit aku sama kamu 🌸",
+      caption: "Momen favorit aku sama bubis",
     },
     {
       src: "/gallery/cute.jpg",
-      caption: "Ketawa sama kamu itu obat terbaik 😄",
+      caption: "Ketawa sama bubis itu obat terbaik",
     },
     {
       src: "/gallery/fav.jpg",
-      caption: "Waktu kamu lagi lucu banget 🥰",
+      caption: "Waktu bubis lagi lucu banget",
     },
     {
-      src: "/gallery/happy.JPG",
-      caption: "Kenangan yang selalu aku inget 🌷",
+      src: "/gallery/happy.jpg",
+      caption: "Kenangan yang selalu aku inget",
     },
     {
       src: "/gallery/home.jpg",
-      caption: "Sama kamu rasanya rumah 🏡",
+      caption: "Sama bubis rasanya rumah",
     },
     {
       src: "/gallery/jatimpark.jpg",
-      caption: "Foto paling aesthetic kita 📸",
+      caption: "Foto paling aesthetic kita",
     },
   ],
 

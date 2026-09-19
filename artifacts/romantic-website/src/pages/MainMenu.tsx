@@ -70,7 +70,7 @@ export default function MainMenu() {
             <p className="text-sm text-foreground">
               Kita udah bersama selama{" "}
               <span className="font-bold text-primary">{togetherText}</span>{" "}
-              <span className="text-rose-400">✨</span>
+              <span className="text-rose-400">✦</span>
             </p>
           </div>
         </div>

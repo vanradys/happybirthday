@@ -45,7 +45,7 @@ export default function LetterPage({ letter }: LetterProps) {
                 }}
                 className="px-7 py-3 bg-[#9f1d23] text-[#fff7e8] rounded-full font-semibold hover:bg-[#7f151b] transition-colors shadow-md"
               >
-                Klik nya yang sabar yaa 💌
+                Klik nya yang sabar yaa!!
               </button>
             </div>
           ) : (
@@ -68,13 +68,13 @@ export default function LetterPage({ letter }: LetterProps) {
                     onClick={() => setRevealed((r) => r + 1)}
                     className="px-7 py-3 bg-[#9f1d23] text-[#fff7e8] rounded-full font-semibold hover:bg-[#7f151b] transition-colors"
                   >
-                    Lanjut... 💕
+                    Lanjut ❤︎❤︎❤︎
                   </button>
                 ) : (
                   <div className="space-y-5 animate-[fadeIn_0.5s_ease]">
-                    <div className="text-3xl">🌸</div>
+                    <div className="text-3xl">❤︎</div>
                     <p className="text-[#8a6262] text-sm italic">
-                      Rasa Sayangnya gak cuma segini kok, buka page lain yaa buat liat lebih banyak 💌
+                      Buka page lain yaa buat liat lebih banyak
                     </p>
                     <button
                       data-testid="button-back-to-menu-end"
