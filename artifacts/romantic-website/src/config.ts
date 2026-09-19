@@ -82,27 +82,27 @@ export const config = {
 
   gallery: [
     {
-      src: "/gallery/foto-1.jpg",
+      src: "/gallery/bday.jpg",
       caption: "Momen favorit aku sama kamu 🌸",
     },
     {
-      src: "/gallery/foto-2.jpg",
+      src: "/gallery/cute.jpg",
       caption: "Ketawa sama kamu itu obat terbaik 😄",
     },
     {
-      src: "/gallery/foto-3.jpg",
+      src: "/gallery/fav.jpg",
       caption: "Waktu kamu lagi lucu banget 🥰",
     },
     {
-      src: "/gallery/foto-4.jpg",
+      src: "/gallery/happy.JPG",
       caption: "Kenangan yang selalu aku inget 🌷",
     },
     {
-      src: "/gallery/foto-5.jpg",
+      src: "/gallery/home.jpg",
       caption: "Sama kamu rasanya rumah 🏡",
     },
     {
-      src: "/gallery/foto-6.jpg",
+      src: "/gallery/jatimpark.jpg",
       caption: "Foto paling aesthetic kita 📸",
     },
   ],
@@ -137,11 +137,35 @@ export const config = {
   ],
 
   achievements: [
-    { emoji: "🌪️", title: "Mood Swing Survivor", description: "Tetap stay walaupun akuu lagi pundung mode !" },
-    { emoji: "🧠", title: "Overthink Listener", description: "Always listens, even when the thoughts get messy" },
-    { emoji: "✅", title: "Certified Good Boy", description: "Officially verified as the sweetest boy ever — verified!" },
-    { emoji: "⭐", title: "Main Character", description: "Forever the main character in bubuu little world" },
-    { emoji: "🎯", title: "Always There", description: "Always shows up when it matters" },
-    { emoji: "🫂", title: "Best Provider", description: "Best sweet words provider in Meowland" },
+    {
+      icon: "/bubu_icon/mood.png",
+      title: "Mood Swing Survivor",
+      description: "Tetap stay walaupun akuu lagi pundung mode !",
+    },
+    {
+      icon: "/bubu_icon/overthink.png",
+      title: "Overthink Listener",
+      description: "Always listens, even when the thoughts get messy",
+    },
+    {
+      icon: "/bubu_icon/certified.png",
+      title: "Certified Good Boy",
+      description: "Officially verified as the sweetest boy ever — verified!",
+    },
+    {
+      icon: "/bubu_icon/main.png",
+      title: "Main Character",
+      description: "Forever the main character in bubuu little world",
+    },
+    {
+      icon: "/bubu_icon/always.png",
+      title: "Always There",
+      description: "Always shows up when it matters",
+    },
+    {
+      icon: "/bubu_icon/provider.png",
+      title: "Best Provider",
+      description: "Best sweet words provider in Meowland",
+    },
   ],
 };

@@ -42,7 +42,13 @@ export default function Achievements() {
               style={{ transitionDelay: `${idx * 100}ms` }}
             >
               <div className="flex items-start gap-4">
-                <div className="text-4xl flex-shrink-0">{item.emoji}</div>
+                <img
+                  src={item.icon}
+                  alt={item.title}
+                  className="h-14 w-14 flex-shrink-0 object-contain drop-shadow-md"
+                  loading="lazy"
+                />
+
                 <div>
                   <h3 className="font-bold text-black mb-1">{item.title}</h3>
                   <p className="text-xs text-black/70">{item.description}</p>
