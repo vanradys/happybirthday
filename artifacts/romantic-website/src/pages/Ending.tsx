@@ -286,9 +286,10 @@ export default function Ending() {
         </div>
 
         <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center">
-          <Heart
-            className="mb-14 h-24 w-24 text-[#9f1d23] drop-shadow-lg"
-            fill="currentColor"
+          <img
+            src="/ending/sayang.png"
+            alt="Sayang"
+            className="mb-14 h-32 w-32 object-contain drop-shadow-lg animate-[loveFloat_5s_ease-in-out_infinite]"
           />
 
           <h1 className="mb-14 text-5xl font-extrabold tracking-tight text-[#fff7e8] drop-shadow-sm sm:text-7xl">

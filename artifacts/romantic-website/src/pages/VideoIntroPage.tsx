@@ -17,9 +17,7 @@ const introTexts: string[] = [
 ];
 
 const FRIENDS_INTRO_TEXT =
-  "Gimana videonyaa? lucu kann hehe."
-  "Selanjutnya ada doa dari temen-temen baikmu sayang, enjoy~."
-  ;
+  "Gimana videonyaa? lucu kann hehe.\nSelanjutnya ada doa dari temen-temen baikmu sayang, enjoy~.";
 
 const INITIAL_BLACK_SCREEN_DELAY = 2400;
 const TEXT_DURATION = 3500;
@@ -29,6 +27,7 @@ export default function VideoIntroPage({ onNext }: VideoIntroPageProps) {
   const [currentTextIndex, setCurrentTextIndex] = useState<number>(0);
   const [showIntroText, setShowIntroText] = useState<boolean>(false);
   const [step, setStep] = useState<VideoStep>("intro-text");
+  const [isFriendsVideoFinished, setIsFriendsVideoFinished] = useState<boolean>(false);
 
   useEffect(() => {
     const blackScreenTimer = window.setTimeout(() => {
@@ -62,6 +61,7 @@ export default function VideoIntroPage({ onNext }: VideoIntroPageProps) {
 
     const friendsTextTimer = window.setTimeout(() => {
       setStep("friends-video");
+      setIsFriendsVideoFinished(false);
     }, FRIENDS_TEXT_DURATION);
 
     return () => window.clearTimeout(friendsTextTimer);
@@ -72,6 +72,10 @@ export default function VideoIntroPage({ onNext }: VideoIntroPageProps) {
   };
 
   const handleFriendsVideoEnd = () => {
+    setIsFriendsVideoFinished(true);
+  };
+
+  const handleFinishClick = () => {
     if (onNext) {
       onNext();
     }
@@ -103,7 +107,7 @@ export default function VideoIntroPage({ onNext }: VideoIntroPageProps) {
 
       {step === "friends-text" && (
         <div className="intro-text-wrapper">
-          <p className="intro-text fade-text">{FRIENDS_INTRO_TEXT}</p>
+          <p className="intro-text fade-text whitespace-pre-line">{FRIENDS_INTRO_TEXT}</p>
         </div>
       )}
 
@@ -116,6 +120,16 @@ export default function VideoIntroPage({ onNext }: VideoIntroPageProps) {
             autoPlay
             onEnded={handleFriendsVideoEnd}
           />
+
+          {isFriendsVideoFinished && (
+            <button
+              type="button"
+              onClick={handleFinishClick}
+              className="mt-6 rounded-full bg-[#fff7e8] px-10 py-3 text-base font-black text-[#4b1515] shadow-xl transition hover:scale-105 hover:bg-[#ffd166] active:scale-95"
+            >
+              Selesai
+            </button>
+          )}
         </div>
       )}
     </section>
