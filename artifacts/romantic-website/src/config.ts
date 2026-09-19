@@ -76,11 +76,11 @@ export const config = {
   ],
 
   timeline: [
-  { date: "19 Agustus 2023", emoji: "👀", title: "Awal Kenal", description: "Awalnya cuma saling sapa karena info manajemen kelas C, siapa sangka dari chat sesingkat itu semuanya dimulai."  },
-  { date: "1 September 2023", emoji: "🏆", title: "Mulai Sering Chat", description: "Dari aku awalnya cuma ajakin lomba, obrolan kecil kita pelan-pelan jadi makin sering dan makin nyaman."  },
-  { date: "26 Oktober 2023", emoji: "💗", title: "Hari Kita Mulai", description: "Hari di mana kita resmi mulai jadi bagian penting dalam hidup satu sama lain." },
-  { date: "26 Oktober 2024", emoji: "🐈", title: "Bahasa Kecil Kita", description: "Bubis, bubuu, goodmeowning, kucink, dan semua bahasa lucu yang akhirnya jadi dunia kecil milik kita berdua." },
-  { date: "26 Oktober 2025", emoji: "☁️", title: "Safe Place", description: "Pelan-pelan kita bukan cuma jadi pasangan, tapi juga jadi tempat pulang dan tempat bersandar satu sama lain." },
+  { date: "19 Agustus 2023", emoji: "✿", title: "Awal Kenal", description: "Awalnya cuma saling sapa karena info manajemen kelas C, siapa sangka dari chat sesingkat itu semuanya dimulai."  },
+  { date: "1 September 2023", emoji: "❤︎", title: "Mulai Sering Chat", description: "Dari aku awalnya cuma ajakin lomba, obrolan kecil kita pelan-pelan jadi makin sering dan makin nyaman."  },
+  { date: "26 Oktober 2023", emoji: "✮", title: "Hari Kita Mulai", description: "Hari di mana kita resmi mulai jadi bagian penting dalam hidup satu sama lain." },
+  { date: "26 Oktober 2024", emoji: "۶ৎ", title: "Bahasa Kecil Kita", description: "Bubis, bubuu, goodmeowning, kucink, dan semua bahasa lucu yang akhirnya jadi dunia kecil milik kita berdua." },
+  { date: "26 Oktober 2025", emoji: "ִֶָ࣪☾.", title: "Safe Place", description: "Pelan-pelan kita bukan cuma jadi pasangan, tapi juga jadi tempat pulang dan tempat bersandar satu sama lain." },
   { date: "Sekarang - Selamanya", emoji: "💍", title: "Masa Depan Kita", description: "Dari mimpi, rencana, sampai obrolan random tentang masa depan, aku senang karena di setiap versi cerita hidupmu nanti, ada kita di sana." }
 ],
 

@@ -41,11 +41,11 @@ export default function Achievements() {
               }`}
               style={{ transitionDelay: `${idx * 100}ms` }}
             >
-              <div className="flex items-start gap-4">
+              <div className="flex items-center gap-5">
                 <img
                   src={item.icon}
                   alt={item.title}
-                  className="h-14 w-14 flex-shrink-0 object-contain drop-shadow-md"
+                  className="h-20 w-20 flex-shrink-0 object-contain drop-shadow-md"
                   loading="lazy"
                 />
 

@@ -47,7 +47,7 @@ export default function Messages() {
                 visible ? "opacity-100 scale-100" : "opacity-0 scale-95"
               }`}
             >
-              <div className="text-3xl mb-4">✨</div>
+              <div className="text-3xl mb-4">✦</div>
               <p
                 data-testid="text-love-message"
                 className="text-xl font-serif text-foreground leading-relaxed"

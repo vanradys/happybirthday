@@ -56,7 +56,7 @@ export default function PasswordPage() {
             data-testid="button-password-submit"
             className="w-full py-3 bg-primary text-white rounded-xl font-semibold hover:opacity-90 transition-opacity"
           >
-            Buka ✨
+            Buka!!!
           </button>
         </form>
       </div>
