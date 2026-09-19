@@ -159,6 +159,16 @@ function MusicPlayerRouteGuard() {
   return <MusicPlayer />;
 }
 
+function AnimatedRoutes() {
+  const [location] = useLocation();
+
+  return (
+    <div key={location} className="page-pop-enter">
+      <Router />
+    </div>
+  );
+}
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -167,7 +177,7 @@ function App() {
           <CursorEffect />
           <MusicPlayerRouteGuard />
           <BirthdayIntroOverlay />
-          <Router />
+          <AnimatedRoutes />
         </WouterRouter>
         <Toaster />
       </TooltipProvider>

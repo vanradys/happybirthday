@@ -40,6 +40,7 @@ export default function Gallery() {
         <h1 className="text-2xl font-serif font-bold text-center text-foreground mb-1">
           Galeri Kenangan
         </h1>
+
         <p className="text-center text-muted-foreground text-sm mb-10">
           Kenangan indah yang selalu aku jaga 💝
         </p>
@@ -49,13 +50,27 @@ export default function Gallery() {
             <div
               key={idx}
               data-testid={`polaroid-${idx}`}
+              style={{
+                animation: "fadeIn 0.65s ease-out both",
+                animationDelay: `${idx * 160}ms`,
+              }}
               className={`bg-white p-3 pb-8 shadow-md ${ROTATIONS[idx % ROTATIONS.length]} hover:rotate-0 hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer`}
             >
               <div
-                className={`${COLORS[idx % COLORS.length]} aspect-square flex items-center justify-center text-4xl rounded-sm mb-3`}
+                className={`${COLORS[idx % COLORS.length]} aspect-square overflow-hidden flex items-center justify-center text-4xl rounded-sm mb-3`}
               >
-                {EMOJIS[idx % EMOJIS.length]}
+                {item.src ? (
+                  <img
+                    src={item.src}
+                    alt={item.caption}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  EMOJIS[idx % EMOJIS.length]
+                )}
               </div>
+
               <p className="text-center text-xs text-foreground/70 font-serif leading-tight">
                 {item.caption}
               </p>

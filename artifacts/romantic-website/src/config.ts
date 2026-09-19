@@ -81,12 +81,30 @@ export const config = {
 ],
 
   gallery: [
-    { caption: "Momen favorit aku sama kamu 🌸" },
-    { caption: "Ketawa sama kamu itu obat terbaik 😄" },
-    { caption: "Waktu kamu lagi lucu banget 🥰" },
-    { caption: "Kenangan yang selalu aku inget 🌷" },
-    { caption: "Sama kamu rasanya rumah 🏡" },
-    { caption: "Foto paling aesthetic kita 📸" },
+    {
+      src: "/gallery/foto-1.jpg",
+      caption: "Momen favorit aku sama kamu 🌸",
+    },
+    {
+      src: "/gallery/foto-2.jpg",
+      caption: "Ketawa sama kamu itu obat terbaik 😄",
+    },
+    {
+      src: "/gallery/foto-3.jpg",
+      caption: "Waktu kamu lagi lucu banget 🥰",
+    },
+    {
+      src: "/gallery/foto-4.jpg",
+      caption: "Kenangan yang selalu aku inget 🌷",
+    },
+    {
+      src: "/gallery/foto-5.jpg",
+      caption: "Sama kamu rasanya rumah 🏡",
+    },
+    {
+      src: "/gallery/foto-6.jpg",
+      caption: "Foto paling aesthetic kita 📸",
+    },
   ],
 
   loveMessages: [

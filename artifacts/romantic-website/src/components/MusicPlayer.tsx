@@ -5,7 +5,7 @@ type MusicFadeOutEvent = CustomEvent<{
   duration?: number;
 }>;
 
-const MUSIC_SRC = "/penjaga-hati.mp3";
+const MUSIC_SRC = "/kota-tanpamu.mp3";
 const DEFAULT_VOLUME = 0.4;
 
 export default function MusicPlayer() {
