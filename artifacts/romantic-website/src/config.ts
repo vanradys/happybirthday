@@ -87,11 +87,11 @@ export const config = {
   gallery: [
     {
       src: "/gallery/bday.jpg",
-      caption: "Momen favorit aku sama bubis",
+      caption: "Perayaan ulang tahun !!!",
     },
     {
       src: "/gallery/cute.jpg",
-      caption: "Ketawa sama bubis itu obat terbaik",
+      caption: "First date kita ya bubis",
     },
     {
       src: "/gallery/fav.jpg",
